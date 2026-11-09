@@ -110,5 +110,37 @@ window.SITE_DATA=window.SITE_DATA||{};(SITE_DATA.poems=SITE_DATA.poems||{})['bea
    ]
   }
  ],
- "source": "Hymns\\Beatitudes vs Consequences in the Apocalypse of John the Revelator.docx"
+ "source": {
+  "note": "This is a compilation with poetic edits. While all of these are based on Revelation verses, they are edited to fit into meter and to flow together. The verses include:",
+  "verses": [
+   [
+    "Beatitude of Knowledge vs The Ignorant",
+    "1:3; 22:10; 1:1"
+   ],
+   [
+    "Beatitude of Rest vs The Tormented",
+    "14:13; 14:9; 14:10; 14:11"
+   ],
+   [
+    "Beatitude of the Watcher vs The Slothful",
+    "16:15; 3:4"
+   ],
+   [
+    "Beatitude of the Called vs the Harlot",
+    "19:9; 18:4; 19:7; 18:9; 19:8; 18:5; 18:20"
+   ],
+   [
+    "Beatitude of Salvation vs Damnation",
+    "22:14; 22:15; 22:17"
+   ],
+   [
+    "Beatitude of Life vs Death",
+    "20:6; 20:12; 20:14; 20:15; 20:5"
+   ],
+   [
+    "Beatitude of Obedience vs Delay",
+    "22:7; 22:11"
+   ]
+  ]
+ }
 };

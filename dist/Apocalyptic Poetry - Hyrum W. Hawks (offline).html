@@ -395,9 +395,10 @@ button:disabled{opacity:.3;cursor:default}
 .door:hover{border-color:var(--hi);background:rgba(255,169,77,.07);transform:translateY(-2px)}
 .door .dt{font:400 clamp(15px,1.6vw,22px)/1.15 var(--serif);color:var(--ink)}
 .door .db{font:400 clamp(11px,1vw,14px) var(--caps);letter-spacing:.1em;color:var(--dim)}
-.door.d1{left:6%;top:14%} .door.d2{right:6%;top:14%;text-align:right}
-.door.d3{left:6%;bottom:13%} .door.d4{right:6%;bottom:13%;text-align:right}
-.hero-in{inset:24% 27%}
+.door{text-align:center;align-items:center}
+.door.d1{left:6%;top:14%} .door.d2{right:6%;top:14%}
+.door.d3{left:6%;bottom:13%} .door.d4{right:6%;bottom:13%}
+.hero-in{inset:41% 27% 6%;justify-content:flex-start}
 .hero-in h1{white-space:nowrap;font-size:clamp(28px,4.6vw,62px)}
 
 @media (max-width:640px){
@@ -405,7 +406,7 @@ button:disabled{opacity:.3;cursor:default}
   .hero-in{position:static;inset:auto;padding:30px 0 20px}
   .hero-in h1{white-space:normal}
   .doors{position:static;display:grid;gap:12px;padding-bottom:10px}
-  .door{position:static;width:auto;height:auto;text-align:left!important}
+  .door{position:static;width:auto;height:auto}
   .door .dt{font-size:22px}
 }
 
@@ -423,6 +424,19 @@ body.theme-tan .foot-mark{filter:invert(1) sepia(1) brightness(.45);opacity:.6}
 .framed .frame-in h1{white-space:normal;font-size:clamp(28px,4vw,52px);margin-bottom:12px}
 .framed .frame-in .items{min-width:min(420px,100%)}
 .framed .frame-in .items a,.framed .frame-in .items .soon{text-align:center}
+
+.cx-stack{display:flex;flex-direction:column}
+.cx.walk .cx-stack #cxBody{order:-1;margin-bottom:18px}
+.cx .arcbox{padding:6px 6px 2px}
+.cx.walk .pcard{min-height:0;padding:18px 22px}
+
+/* source notes on poems */
+.by .star,.srcnote .star{color:var(--hi);font:600 1.1em var(--serif);margin-left:3px;text-decoration:none}
+.srcnote{margin:20px auto 0;border-top:1px solid var(--line);padding-top:18px;color:var(--ink2);font-size:17px;line-height:1.5}
+.srcnote ul{list-style:none;padding:0;margin:10px 0}
+.srcnote li{margin:4px 0}
+.srcnote li b{font-weight:600;color:var(--ink)}
+.srcnote .back{font:400 13px var(--caps);letter-spacing:.08em}
 
 </style>
 </head>
@@ -463,8 +477,8 @@ SITE_DATA.catalog = {
     },
     {
       id: "john",
-      title: "John the Revelator's Poetry",
-      byline: "structures in the Book of Revelation",
+      title: "The Poetry of John's Apocalypse",
+      byline: "",
       blurb: "",
       groups: [
         { title: "Chiasm", items: [
@@ -479,14 +493,14 @@ SITE_DATA.catalog = {
       id: "more",
       theme: "tan",        /* tan pages */
       frame: "hebrew",     /* paleo-Hebrew Genesis 1 spiral border */
-      title: "Ezekiel, Daniel, and Others",
-      byline: "later",
+      title: "Ezekiel, Daniel, and Other Ancient Prophets",
+      byline: "",
       blurb: "",
       groups: [ { title: null, items: [ { title: "Coming", status: "soon" } ] } ]
     },
     {
       id: "stats",
-      title: "Statistical Analyses in the Texts",
+      title: "Data Analysis: Statistics and Other Nerdery",
       byline: "",
       blurb: "",
       groups: [ { title: null, items: [ { title: "Coming", status: "soon" } ] } ]
@@ -1833,7 +1847,39 @@ window.SITE_DATA=window.SITE_DATA||{};(SITE_DATA.poems=SITE_DATA.poems||{})['bea
    ]
   }
  ],
- "source": "Hymns\\Beatitudes vs Consequences in the Apocalypse of John the Revelator.docx"
+ "source": {
+  "note": "This is a compilation with poetic edits. While all of these are based on Revelation verses, they are edited to fit into meter and to flow together. The verses include:",
+  "verses": [
+   [
+    "Beatitude of Knowledge vs The Ignorant",
+    "1:3; 22:10; 1:1"
+   ],
+   [
+    "Beatitude of Rest vs The Tormented",
+    "14:13; 14:9; 14:10; 14:11"
+   ],
+   [
+    "Beatitude of the Watcher vs The Slothful",
+    "16:15; 3:4"
+   ],
+   [
+    "Beatitude of the Called vs the Harlot",
+    "19:9; 18:4; 19:7; 18:9; 19:8; 18:5; 18:20"
+   ],
+   [
+    "Beatitude of Salvation vs Damnation",
+    "22:14; 22:15; 22:17"
+   ],
+   [
+    "Beatitude of Life vs Death",
+    "20:6; 20:12; 20:14; 20:15; 20:5"
+   ],
+   [
+    "Beatitude of Obedience vs Delay",
+    "22:7; 22:11"
+   ]
+  ]
+ }
 };
 
 </script>
@@ -1857,14 +1903,16 @@ function mount(el, data, startLabel){
 
   el.innerHTML = `
   <div class="cx">
-    <p class="eyebrow">John the Revelator's Poetry · Chiasm</p>
+    <p class="eyebrow">The Poetry of John's Apocalypse · Chiasm</p>
     <h1>The 70-Fold Chiasm</h1>
     <p class="lede">Seventy mirrored pairs in the Book of Revelation, centered on JST 12:11. Each arc joins a passage to its mirror; tap one to read the pair.</p>
     <p class="cx-credit">Chiasm identified by Hyrum W. Hawks · ${esc(data.version)}</p>
-    <div class="arcbox"><svg id="cxArcs" role="img" aria-label="Arc diagram: 70 arcs joining mirrored passages across the book"></svg></div>
-    <div class="bands" id="cxBands"></div>
     <div class="cx-tabs"><button data-m="walk">Pair by pair</button><button data-m="fold">The full fold</button><label class="cx-tog"><input type="checkbox" id="cxShared" checked> Mark shared words</label></div>
-    <div id="cxBody"></div>
+    <div class="cx-stack">
+      <div class="arcbox"><svg id="cxArcs" role="img" aria-label="Arc diagram: 70 arcs joining mirrored passages across the book"></svg></div>
+      <div class="bands" id="cxBands"></div>
+      <div id="cxBody"></div>
+    </div>
     <p class="cx-note">KJV text, with the Joseph Smith Translation where marked JST. Chapter 12 follows JST verse numbers. Shared words are found by simple word matching, leaving out common words.</p>
   </div>`;
 
@@ -1895,7 +1943,7 @@ function drawArcs(){
   if(!st) return;
   const svg = st.el.querySelector("#cxArcs"); if(!svg) return;
   const {N, NP, seq, P} = st;
-  const W = Math.max(600, svg.clientWidth || 1000), H = Math.round(W*0.36), pad = 14, y0 = H-30;
+  const W = Math.max(600, svg.clientWidth || 1000), H = Math.round(Math.min(W*0.2, 230)), pad = 14, y0 = H-30;
   const dx = (W-2*pad)/(N-1), X = i => pad+i*dx, k = (y0-10)/((N-1)/2*dx);
   let s = "";
   for(let p=0;p<NP;p++){
@@ -1919,6 +1967,7 @@ function srcTag(x){ return x.src==="JST" || (x.ref.startsWith("12:")) ? ` <span 
 function render(){
   const {el, P, NP, data} = st;
   el.querySelectorAll(".cx-tabs button").forEach(b => b.classList.toggle("on", b.dataset.m===st.mode));
+  el.querySelector(".cx").classList.toggle("walk", st.mode==="walk");
   el.querySelectorAll("#cxBands button").forEach(b => b.classList.toggle("on", (+b.dataset.b) === (st.band==null?-1:st.band)));
   drawArcs();
   const body = el.querySelector("#cxBody");
@@ -2042,26 +2091,38 @@ function poem(id){
   setTheme(s);
   crumbs([["Home",""], s?[s.title,"section/"+s.id]:["Poems",""], [P.title,""]]);
   document.title = P.title + " · Hyrum W. Hawks";
-  const head = `<div class="poem-head"><p class="eyebrow">${P.kind==="hymns"?"Hymns":"Poem"}</p><h1>${esc(P.title)}</h1><div class="by">${esc(P.author)}</div>${P.intro?`<p class="intro">${esc(P.intro)}</p>`:""}</div>`;
+  const head = `<div class="poem-head"><p class="eyebrow">${P.kind==="hymns"?"Hymns":"Poem"}</p><h1>${esc(P.title)}</h1><div class="by">${esc(P.author)}${P.source?`<a class="star" href="javascript:void 0" data-jump="src" aria-label="Source note">*</a>`:""}</div>${P.intro?`<p class="intro">${esc(P.intro)}</p>`:""}</div>`;
   if(P.kind==="hymns"){
     app.innerHTML = `<article class="poem">${head}
       <nav class="toc">${P.sections.map(x=>`<a href="#/poem/${id}/${x.n}">${x.n}. ${esc(x.title)}</a>`).join("")}</nav>
       ${P.sections.map(x=>`<section class="hymn" id="h${x.n}"><h2><span class="num">${x.n}</span>${esc(x.title)}</h2>${x.lines.map(l=>`<p>${esc(l)}</p>`).join("")}</section>${ORN}`).join("")}
-    </article>`;
+      ${sourceHTML(P)}</article>`;
   } else if(P.kind==="two-voice"){
     app.innerHTML = `<article class="poem" id="tv">${head}
       <div class="voices"><button class="on" data-v="">Both voices</button><button data-v="only-b">Blessings</button><button data-v="only-c">Consequences</button></div>
       ${P.stanzas.map(st=>{const [b,c]=st.title.replace(/^Beatitude of /,"").split(/ vs /i);
         return `<section class="stanza"><h2>${esc(st.title)}</h2><div class="pairnames"><span class="b">${esc(b||"")}</span> · <span class="c">${esc(c||"")}</span></div>
         ${st.lines.map((l,i)=>`<p class="vl ${i%2?"c":"b"}">${esc(l)}</p>`).join("")}</section>`;}).join(ORN)}
-    </article>`;
+      ${sourceHTML(P)}</article>`;
     const tv = $("#tv");
     tv.querySelectorAll(".voices button").forEach(b => b.onclick = () => {
       tv.classList.remove("only-b","only-c"); if(b.dataset.v) tv.classList.add(b.dataset.v);
       tv.querySelectorAll(".voices button").forEach(x=>x.classList.toggle("on",x===b)); });
   }
+  wireJumps();
 }
 
+function sourceHTML(P){
+  if(!P.source) return "";
+  return `<aside class="srcnote" id="src"><p><span class="star">*</span> ${esc(P.source.note)}</p>
+    ${P.source.verses?`<ul>${P.source.verses.map(v=>`<li><b>${esc(v[0])}:</b> Revelation ${esc(v[1])}</li>`).join("")}</ul>`:""}
+    <p class="back"><a href="javascript:void 0" data-jump="top">Back to the top</a></p></aside>`;
+}
+function wireJumps(){
+  app.querySelectorAll("[data-jump]").forEach(a => a.onclick = e => { e.preventDefault();
+    if(a.dataset.jump==="top") window.scrollTo({top:0,behavior:"smooth"});
+    else { const el=document.getElementById(a.dataset.jump); if(el) el.scrollIntoView({behavior:"smooth"}); } });
+}
 function notFound(){ crumbs([["Home",""],["Not found",""]]); app.innerHTML = `<h1>Not found</h1><p class="lede"><a href="#/">Return home</a></p>`; }
 
 function route(){

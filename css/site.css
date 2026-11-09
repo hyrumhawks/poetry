@@ -185,9 +185,10 @@ button:disabled{opacity:.3;cursor:default}
 .door:hover{border-color:var(--hi);background:rgba(255,169,77,.07);transform:translateY(-2px)}
 .door .dt{font:400 clamp(15px,1.6vw,22px)/1.15 var(--serif);color:var(--ink)}
 .door .db{font:400 clamp(11px,1vw,14px) var(--caps);letter-spacing:.1em;color:var(--dim)}
-.door.d1{left:6%;top:14%} .door.d2{right:6%;top:14%;text-align:right}
-.door.d3{left:6%;bottom:13%} .door.d4{right:6%;bottom:13%;text-align:right}
-.hero-in{inset:24% 27%}
+.door{text-align:center;align-items:center}
+.door.d1{left:6%;top:14%} .door.d2{right:6%;top:14%}
+.door.d3{left:6%;bottom:13%} .door.d4{right:6%;bottom:13%}
+.hero-in{inset:41% 27% 6%;justify-content:flex-start}
 .hero-in h1{white-space:nowrap;font-size:clamp(28px,4.6vw,62px)}
 
 @media (max-width:640px){
@@ -195,7 +196,7 @@ button:disabled{opacity:.3;cursor:default}
   .hero-in{position:static;inset:auto;padding:30px 0 20px}
   .hero-in h1{white-space:normal}
   .doors{position:static;display:grid;gap:12px;padding-bottom:10px}
-  .door{position:static;width:auto;height:auto;text-align:left!important}
+  .door{position:static;width:auto;height:auto}
   .door .dt{font-size:22px}
 }
 
@@ -213,3 +214,16 @@ body.theme-tan .foot-mark{filter:invert(1) sepia(1) brightness(.45);opacity:.6}
 .framed .frame-in h1{white-space:normal;font-size:clamp(28px,4vw,52px);margin-bottom:12px}
 .framed .frame-in .items{min-width:min(420px,100%)}
 .framed .frame-in .items a,.framed .frame-in .items .soon{text-align:center}
+
+.cx-stack{display:flex;flex-direction:column}
+.cx.walk .cx-stack #cxBody{order:-1;margin-bottom:18px}
+.cx .arcbox{padding:6px 6px 2px}
+.cx.walk .pcard{min-height:0;padding:18px 22px}
+
+/* source notes on poems */
+.by .star,.srcnote .star{color:var(--hi);font:600 1.1em var(--serif);margin-left:3px;text-decoration:none}
+.srcnote{margin:20px auto 0;border-top:1px solid var(--line);padding-top:18px;color:var(--ink2);font-size:17px;line-height:1.5}
+.srcnote ul{list-style:none;padding:0;margin:10px 0}
+.srcnote li{margin:4px 0}
+.srcnote li b{font-weight:600;color:var(--ink)}
+.srcnote .back{font:400 13px var(--caps);letter-spacing:.08em}

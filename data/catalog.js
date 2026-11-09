@@ -21,8 +21,8 @@ SITE_DATA.catalog = {
     },
     {
       id: "john",
-      title: "John the Revelator's Poetry",
-      byline: "structures in the Book of Revelation",
+      title: "The Poetry of John's Apocalypse",
+      byline: "",
       blurb: "",
       groups: [
         { title: "Chiasm", items: [
@@ -37,14 +37,14 @@ SITE_DATA.catalog = {
       id: "more",
       theme: "tan",        /* tan pages */
       frame: "hebrew",     /* paleo-Hebrew Genesis 1 spiral border */
-      title: "Ezekiel, Daniel, and Others",
-      byline: "later",
+      title: "Ezekiel, Daniel, and Other Ancient Prophets",
+      byline: "",
       blurb: "",
       groups: [ { title: null, items: [ { title: "Coming", status: "soon" } ] } ]
     },
     {
       id: "stats",
-      title: "Statistical Analyses in the Texts",
+      title: "Data Analysis: Statistics and Other Nerdery",
       byline: "",
       blurb: "",
       groups: [ { title: null, items: [ { title: "Coming", status: "soon" } ] } ]

@@ -66,26 +66,38 @@ function poem(id){
   setTheme(s);
   crumbs([["Home",""], s?[s.title,"section/"+s.id]:["Poems",""], [P.title,""]]);
   document.title = P.title + " · Hyrum W. Hawks";
-  const head = `<div class="poem-head"><p class="eyebrow">${P.kind==="hymns"?"Hymns":"Poem"}</p><h1>${esc(P.title)}</h1><div class="by">${esc(P.author)}</div>${P.intro?`<p class="intro">${esc(P.intro)}</p>`:""}</div>`;
+  const head = `<div class="poem-head"><p class="eyebrow">${P.kind==="hymns"?"Hymns":"Poem"}</p><h1>${esc(P.title)}</h1><div class="by">${esc(P.author)}${P.source?`<a class="star" href="javascript:void 0" data-jump="src" aria-label="Source note">*</a>`:""}</div>${P.intro?`<p class="intro">${esc(P.intro)}</p>`:""}</div>`;
   if(P.kind==="hymns"){
     app.innerHTML = `<article class="poem">${head}
       <nav class="toc">${P.sections.map(x=>`<a href="#/poem/${id}/${x.n}">${x.n}. ${esc(x.title)}</a>`).join("")}</nav>
       ${P.sections.map(x=>`<section class="hymn" id="h${x.n}"><h2><span class="num">${x.n}</span>${esc(x.title)}</h2>${x.lines.map(l=>`<p>${esc(l)}</p>`).join("")}</section>${ORN}`).join("")}
-    </article>`;
+      ${sourceHTML(P)}</article>`;
   } else if(P.kind==="two-voice"){
     app.innerHTML = `<article class="poem" id="tv">${head}
       <div class="voices"><button class="on" data-v="">Both voices</button><button data-v="only-b">Blessings</button><button data-v="only-c">Consequences</button></div>
       ${P.stanzas.map(st=>{const [b,c]=st.title.replace(/^Beatitude of /,"").split(/ vs /i);
         return `<section class="stanza"><h2>${esc(st.title)}</h2><div class="pairnames"><span class="b">${esc(b||"")}</span> · <span class="c">${esc(c||"")}</span></div>
         ${st.lines.map((l,i)=>`<p class="vl ${i%2?"c":"b"}">${esc(l)}</p>`).join("")}</section>`;}).join(ORN)}
-    </article>`;
+      ${sourceHTML(P)}</article>`;
     const tv = $("#tv");
     tv.querySelectorAll(".voices button").forEach(b => b.onclick = () => {
       tv.classList.remove("only-b","only-c"); if(b.dataset.v) tv.classList.add(b.dataset.v);
       tv.querySelectorAll(".voices button").forEach(x=>x.classList.toggle("on",x===b)); });
   }
+  wireJumps();
 }
 
+function sourceHTML(P){
+  if(!P.source) return "";
+  return `<aside class="srcnote" id="src"><p><span class="star">*</span> ${esc(P.source.note)}</p>
+    ${P.source.verses?`<ul>${P.source.verses.map(v=>`<li><b>${esc(v[0])}:</b> Revelation ${esc(v[1])}</li>`).join("")}</ul>`:""}
+    <p class="back"><a href="javascript:void 0" data-jump="top">Back to the top</a></p></aside>`;
+}
+function wireJumps(){
+  app.querySelectorAll("[data-jump]").forEach(a => a.onclick = e => { e.preventDefault();
+    if(a.dataset.jump==="top") window.scrollTo({top:0,behavior:"smooth"});
+    else { const el=document.getElementById(a.dataset.jump); if(el) el.scrollIntoView({behavior:"smooth"}); } });
+}
 function notFound(){ crumbs([["Home",""],["Not found",""]]); app.innerHTML = `<h1>Not found</h1><p class="lede"><a href="#/">Return home</a></p>`; }
 
 function route(){

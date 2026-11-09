@@ -17,14 +17,16 @@ function mount(el, data, startLabel){
 
   el.innerHTML = `
   <div class="cx">
-    <p class="eyebrow">John the Revelator's Poetry · Chiasm</p>
+    <p class="eyebrow">The Poetry of John's Apocalypse · Chiasm</p>
     <h1>The 70-Fold Chiasm</h1>
     <p class="lede">Seventy mirrored pairs in the Book of Revelation, centered on JST 12:11. Each arc joins a passage to its mirror; tap one to read the pair.</p>
     <p class="cx-credit">Chiasm identified by Hyrum W. Hawks · ${esc(data.version)}</p>
-    <div class="arcbox"><svg id="cxArcs" role="img" aria-label="Arc diagram: 70 arcs joining mirrored passages across the book"></svg></div>
-    <div class="bands" id="cxBands"></div>
     <div class="cx-tabs"><button data-m="walk">Pair by pair</button><button data-m="fold">The full fold</button><label class="cx-tog"><input type="checkbox" id="cxShared" checked> Mark shared words</label></div>
-    <div id="cxBody"></div>
+    <div class="cx-stack">
+      <div class="arcbox"><svg id="cxArcs" role="img" aria-label="Arc diagram: 70 arcs joining mirrored passages across the book"></svg></div>
+      <div class="bands" id="cxBands"></div>
+      <div id="cxBody"></div>
+    </div>
     <p class="cx-note">KJV text, with the Joseph Smith Translation where marked JST. Chapter 12 follows JST verse numbers. Shared words are found by simple word matching, leaving out common words.</p>
   </div>`;
 
@@ -55,7 +57,7 @@ function drawArcs(){
   if(!st) return;
   const svg = st.el.querySelector("#cxArcs"); if(!svg) return;
   const {N, NP, seq, P} = st;
-  const W = Math.max(600, svg.clientWidth || 1000), H = Math.round(W*0.36), pad = 14, y0 = H-30;
+  const W = Math.max(600, svg.clientWidth || 1000), H = Math.round(Math.min(W*0.2, 230)), pad = 14, y0 = H-30;
   const dx = (W-2*pad)/(N-1), X = i => pad+i*dx, k = (y0-10)/((N-1)/2*dx);
   let s = "";
   for(let p=0;p<NP;p++){
@@ -79,6 +81,7 @@ function srcTag(x){ return x.src==="JST" || (x.ref.startsWith("12:")) ? ` <span 
 function render(){
   const {el, P, NP, data} = st;
   el.querySelectorAll(".cx-tabs button").forEach(b => b.classList.toggle("on", b.dataset.m===st.mode));
+  el.querySelector(".cx").classList.toggle("walk", st.mode==="walk");
   el.querySelectorAll("#cxBands button").forEach(b => b.classList.toggle("on", (+b.dataset.b) === (st.band==null?-1:st.band)));
   drawArcs();
   const body = el.querySelector("#cxBody");
