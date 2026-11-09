@@ -234,3 +234,11 @@ body.theme-tan .foot-mark{filter:invert(1) sepia(1) brightness(.45);opacity:.6}
 .gen .vs.gap{text-align:center;color:var(--dim)}
 .gen .orn{margin:26px auto 30px}
 .poem-head .subtitle{font:italic 400 22px var(--serif);color:var(--ink2);margin:8px 0 0}
+
+/* small chiasms and other structures */
+.struct{max-width:680px;margin:0 auto}
+.sl{margin:0 0 .55em;padding-left:calc(var(--i) * 2.2em);font-size:22px;line-height:1.4;display:flex;gap:14px}
+.sl .sk{flex:0 0 2.2em;font:600 14px var(--caps);letter-spacing:.06em;color:var(--hi);padding-top:5px}
+.sref{text-align:center;font:400 14px var(--caps);letter-spacing:.14em;color:var(--dim);margin-top:26px}
+@media (max-width:640px){.sl{padding-left:calc(var(--i) * 1em);font-size:19px}}
+.afterword{text-align:center;font-style:italic;color:var(--ink2);font-size:19px;margin-top:22px}

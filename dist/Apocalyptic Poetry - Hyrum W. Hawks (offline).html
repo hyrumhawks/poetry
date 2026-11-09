@@ -451,6 +451,7 @@ body.theme-tan .foot-mark{filter:invert(1) sepia(1) brightness(.45);opacity:.6}
 .sl .sk{flex:0 0 2.2em;font:600 14px var(--caps);letter-spacing:.06em;color:var(--hi);padding-top:5px}
 .sref{text-align:center;font:400 14px var(--caps);letter-spacing:.14em;color:var(--dim);margin-top:26px}
 @media (max-width:640px){.sl{padding-left:calc(var(--i) * 1em);font-size:19px}}
+.afterword{text-align:center;font-style:italic;color:var(--ink2);font-size:19px;margin-top:22px}
 
 </style>
 </head>
@@ -2150,7 +2151,8 @@ window.SITE_DATA=window.SITE_DATA||{};(SITE_DATA.poems=SITE_DATA.poems||{})['rev
   ]
  ],
  "source_file": "Revelation Chiasmus.xlsx, Micropoetry tab (structure); KJV text from Reference Library new-testament.json",
- "eyebrow": "Chiasm"
+ "eyebrow": "Chiasm",
+ "afterword": "This is describing an Earthly people at a temple dedication."
 };
 
 </script>
@@ -2376,7 +2378,7 @@ function poem(id){
   } else if(P.kind==="structure"){
     app.innerHTML = `<article class="poem">${head}
       <div class="struct">${P.lines.map(l=>`<p class="sl" style="--i:${l[1]}"><span class="sk">${esc(l[0])}</span>${esc(l[2])}</p>`).join("")}</div>
-      ${P.ref?`<p class="sref">${esc(P.ref)}</p>`:""}${sourceHTML(P)}</article>`;
+      ${P.ref?`<p class="sref">${esc(P.ref)}</p>`:""}${P.afterword?`<p class="afterword">${esc(P.afterword)}</p>`:""}${sourceHTML(P)}</article>`;
   } else if(P.kind==="two-voice"){
     app.innerHTML = `<article class="poem" id="tv">${head}
       <div class="voices"><button class="on" data-v="">Both voices</button><button data-v="only-b">Blessings</button><button data-v="only-c">Consequences</button></div>

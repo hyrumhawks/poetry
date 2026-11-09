@@ -43,5 +43,6 @@ window.SITE_DATA=window.SITE_DATA||{};(SITE_DATA.poems=SITE_DATA.poems||{})['rev
   ]
  ],
  "source_file": "Revelation Chiasmus.xlsx, Micropoetry tab (structure); KJV text from Reference Library new-testament.json",
- "eyebrow": "Chiasm"
+ "eyebrow": "Chiasm",
+ "afterword": "This is describing an Earthly people at a temple dedication."
 };
