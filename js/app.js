@@ -72,6 +72,11 @@ function poem(id){
       <nav class="toc">${P.sections.map(x=>`<a href="#/poem/${id}/${x.n}">${x.n}. ${esc(x.title)}</a>`).join("")}</nav>
       ${P.sections.map(x=>`<section class="hymn" id="h${x.n}"><h2><span class="num">${x.n}</span>${esc(x.title)}</h2>${x.lines.map(l=>`<p>${esc(l)}</p>`).join("")}</section>${ORN}`).join("")}
       ${sourceHTML(P)}</article>`;
+  } else if(P.kind==="verses"){
+    app.innerHTML = `<article class="poem gen">${head}
+      ${P.verses.map(v => v[0] ? `<p class="vs"><span class="vn">${esc(v[0])}</span>${esc(v[1])}</p>${/were the \w+ day\.$/.test(v[1])?ORN:""}`
+                                : `<p class="vs gap">${esc(v[1])}</p>`).join("")}
+      ${sourceHTML(P)}</article>`;
   } else if(P.kind==="two-voice"){
     app.innerHTML = `<article class="poem" id="tv">${head}
       <div class="voices"><button class="on" data-v="">Both voices</button><button data-v="only-b">Blessings</button><button data-v="only-c">Consequences</button></div>

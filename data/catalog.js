@@ -14,6 +14,7 @@ SITE_DATA.catalog = {
       groups: [
         { title: null, items: [
           { id: "praise-of-john", title: "The Praise of John the Revelator", note: "Nine hymns", route: "poem/praise-of-john" },
+          { id: "creation-of-the-children-of-god", title: "The Creation of the Children of God", note: "Genesis 1:1 through 2:25", route: "poem/creation-of-the-children-of-god" },
           { id: "beatitudes-vs-consequences", title: "Beatitudes vs Consequences in the Apocalypse of John the Revelator", note: "Seven paired stanzas", route: "poem/beatitudes-vs-consequences" },
           { title: "And the rest…", status: "soon" }
         ]}

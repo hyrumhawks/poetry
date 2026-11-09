@@ -167,5 +167,45 @@ window.SITE_DATA=window.SITE_DATA||{};(SITE_DATA.poems=SITE_DATA.poems||{})['pra
    ]
   }
  ],
- "source": "Hymns\\Praise\\Revelation_Hymns_of_Praise.docx"
+ "source": {
+  "note": "This is a compilation with poetic edits. While all of these are based on Revelation verses, they are edited to fit into meter and to flow together. The verses include:",
+  "verses": [
+   [
+    "1. Creator",
+    "4:8; 4:11; 7:10"
+   ],
+   [
+    "2. Redeemer",
+    "5:9–10; 15:4; 11:17; 4:11; 5:12"
+   ],
+   [
+    "3. Savior",
+    "1:5–6; 7:10; 1:8; 11:15; 22:13; 5:12"
+   ],
+   [
+    "4. Advocate",
+    "JST 12:9–12"
+   ],
+   [
+    "5. Sacrifice",
+    "5:12–13"
+   ],
+   [
+    "6. Conqueror",
+    "JST 12:11; 17:6; 19:11"
+   ],
+   [
+    "7. King",
+    "11:15–18; 14:8; 5:12"
+   ],
+   [
+    "8. Judge",
+    "15:3–4; 16:5–7; 19:1–7; 5:12"
+   ],
+   [
+    "9. Bridegroom",
+    "19:1; 19:4–7; 14:2; 5:11; 17:14"
+   ]
+  ]
+ }
 };
