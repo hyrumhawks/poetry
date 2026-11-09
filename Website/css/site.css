@@ -1,0 +1,215 @@
+/* Hyrum W. Hawks style: space-black, Jost + Crimson Pro, Earth-blue accent, headlight-amber emphasis.
+   Colors come from the Oct 26 deck restyle. */
+:root{
+  --bg:#050608; --bg2:rgba(20,23,29,.93); --bg3:#0d1015;
+  --ink:#ecebe7; --ink2:#c9c7c1; --dim:#8e949c;
+  --hi:#ffa94d;          /* headlight amber */
+  --earth:#6cb4ee;       /* Earth blue */
+  --brass:#e6c36a; --line:rgba(150,185,220,.17);
+  --serif:"Crimson Pro","GFS Didot",Georgia,serif;
+  --caps:"Jost","GFS Didot",system-ui,sans-serif;
+  --greek:"GFS Didot",serif;
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;min-height:100vh;color:var(--ink);font:400 20px/1.55 var(--serif);
+  background:
+   radial-gradient(ellipse 1200px 600px at 50% -10%, rgba(108,180,238,.08), transparent 70%),
+   radial-gradient(ellipse 1400px 420px at 50% 115%, rgba(190,190,185,.06), transparent 70%),
+   var(--bg);
+  display:flex;flex-direction:column}
+#stars{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.8}
+header,main,footer{position:relative;z-index:1}
+a{color:var(--earth);text-decoration:none}
+a:hover{color:var(--hi)}
+button{font:500 15px var(--caps);letter-spacing:.06em;color:var(--ink);background:transparent;border:1px solid var(--line);
+  border-radius:4px;padding:7px 14px;cursor:pointer}
+button:hover,button.on{border-color:var(--earth);color:var(--earth)}
+button.on{background:rgba(108,180,238,.1)}
+:focus-visible{outline:2px solid var(--hi);outline-offset:2px}
+
+/* header */
+.bar{display:flex;align-items:baseline;gap:28px;padding:18px clamp(16px,4vw,48px);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.brand{display:flex;flex-direction:column;line-height:1.1}
+.brand-name{font:500 15px var(--caps);letter-spacing:.22em;text-transform:uppercase;color:var(--ink)}
+.brand-sub{font:italic 400 16px var(--serif);color:var(--dim)}
+.crumbs{font:400 14px var(--caps);letter-spacing:.06em;color:var(--dim)}
+.crumbs a{color:var(--dim)} .crumbs a:hover{color:var(--hi)}
+.crumbs span.sep{margin:0 8px;opacity:.5}
+
+main:focus,main:focus-visible{outline:none}
+main{flex:1;width:100%;max-width:1180px;margin:0 auto;padding:28px clamp(16px,4vw,48px) 64px;outline:none}
+.eyebrow{font:500 13px var(--caps);letter-spacing:.28em;text-transform:uppercase;color:var(--earth);margin:0 0 8px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0}
+h1{font-size:clamp(34px,5vw,54px);line-height:1.1}
+h2{font-size:30px}
+.lede{color:var(--ink2);font-size:21px;max-width:44em}
+
+/* home hero: the Greek spiral of JST Revelation 12 frames the title */
+.hero{position:relative;width:100%;aspect-ratio:16/9;max-height:78vh;margin:0 auto 34px;}
+.spiral-wrap{position:absolute;inset:0}
+.hero .spiral-svg{position:absolute;inset:0;width:100%;height:100%}
+.spiral-svg text{font-family:var(--greek);fill:rgba(214,222,232,.17)}
+.spiral-svg .s11{fill:rgba(108,180,238,.8)}
+.spiral-svg .sn{fill:rgba(255,169,77,.55)}
+.hero-in{position:absolute;inset:20% 18%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.hero-in .pre{font:400 clamp(13px,1.6vw,18px) var(--caps);letter-spacing:.4em;text-transform:uppercase;color:var(--dim);margin:0}
+.hero-in h1{font-size:clamp(30px,6vw,76px);letter-spacing:.02em;margin:.1em 0 .15em}
+.hero-in .by:hover{color:var(--ink)}
+.hero-in .logo img:hover{opacity:1}
+.hero-in .by{font:400 clamp(12px,1.4vw,16px) var(--caps);letter-spacing:.3em;text-transform:uppercase;color:var(--hi)}
+.hero-in img{width:clamp(60px,9vw,120px);opacity:.85;margin-top:clamp(8px,2vw,22px)}
+.hero-cap{font:italic 15px var(--serif);color:var(--dim);text-align:center;margin:-22px 0 34px}
+
+/* home sections */
+.shelf{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.sec{background:var(--bg2);border:1px solid var(--line);border-top:3px solid var(--earth);border-radius:6px;padding:24px 26px}
+.sec.soon{border-top-color:var(--line);opacity:.6}
+.sec h2{font-size:28px;line-height:1.15}
+.sec .by{font:400 14px var(--caps);letter-spacing:.12em;color:var(--dim);margin:4px 0 12px}
+.sec p.blurb{color:var(--ink2);font-size:18px;margin:0 0 14px}
+.grp h3{font:500 13px var(--caps);letter-spacing:.24em;text-transform:uppercase;color:var(--hi);margin:18px 0 6px}
+.items{list-style:none;margin:0;padding:0}
+.items li{border-top:1px solid var(--line)}
+.items a,.items .soon{display:block;padding:9px 2px;font-size:20px;line-height:1.25}
+.items a{color:var(--ink)}
+.items a:hover{color:var(--hi)}
+.items small{display:block;font:400 13px var(--caps);letter-spacing:.06em;color:var(--dim);margin-top:2px}
+.items .soon{color:var(--dim);font-style:italic}
+
+/* section page */
+.list-page .items a{font-size:24px;padding:14px 2px}
+
+/* poem pages */
+.poem{max-width:760px;margin:0 auto}
+.poem-head{text-align:center;margin-bottom:34px}
+.poem-head .by{font:400 14px var(--caps);letter-spacing:.28em;text-transform:uppercase;color:var(--hi);margin-top:12px}
+.poem-head .intro{color:var(--dim);font-style:italic;margin-top:10px}
+.toc{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:0 0 40px}
+.toc a{font:400 14px var(--caps);letter-spacing:.08em;color:var(--dim);border:1px solid var(--line);border-radius:20px;padding:4px 12px}
+.toc a:hover{color:var(--hi);border-color:var(--hi)}
+.hymn{margin:0 0 56px;text-align:center;scroll-margin-top:20px}
+.hymn h2{font-size:30px;margin-bottom:16px}
+.hymn h2 .num{display:block;font:500 13px var(--caps);letter-spacing:.3em;color:var(--earth);margin-bottom:4px}
+.hymn p{margin:0 0 .35em;font-size:22px}
+.orn{display:block;margin:0 auto 56px;width:120px;height:12px;opacity:.5}
+
+/* two-voice poem */
+.voices{display:flex;gap:8px;justify-content:center;margin:-10px 0 36px;flex-wrap:wrap}
+.stanza{margin:0 0 50px}
+.stanza h2{font-size:26px;text-align:center;margin-bottom:6px}
+.stanza .pairnames{text-align:center;font:400 13px var(--caps);letter-spacing:.2em;text-transform:uppercase;margin-bottom:18px}
+.pairnames .b{color:var(--hi)} .pairnames .c{color:var(--earth)}
+.vl{margin:0;padding:3px 0;font-size:22px;transition:opacity .3s}
+.vl.b{color:var(--ink)}
+.vl.c{color:var(--earth);padding-left:3.2em;font-style:italic}
+.only-b .vl.c,.only-c .vl.b{opacity:.12}
+.legend-v{text-align:center;color:var(--dim);font-size:16px;font-style:italic;margin-top:-18px;margin-bottom:28px}
+
+/* footer */
+.foot{border-top:1px solid var(--line);padding:22px clamp(16px,4vw,48px);color:var(--dim);font:400 13px/1.5 var(--caps);letter-spacing:.03em;text-align:center}
+.foot p{margin:2px 0}
+.foot-mark{height:40px;opacity:.55;margin-top:10px}
+
+@media (max-width:640px){
+  body{font-size:18px}
+  .hymn p,.vl{font-size:19px}
+  .vl.c{padding-left:1.6em}
+  .hero{aspect-ratio:auto;height:auto;max-height:none}
+  .spiral-wrap{display:none}
+  .hero-in{position:static;padding:30px 0 10px}
+  .doors{position:static;display:grid;gap:12px;padding-bottom:10px}
+  .door{position:static;width:auto}
+}
+
+/* ---------- chiasm viewer ---------- */
+.cx .lede{margin:10px 0 6px}
+.cx-credit{font:400 13px var(--caps);letter-spacing:.12em;color:var(--dim);margin:0 0 18px}
+.arcbox{background:rgba(5,6,8,.6);border:1px solid var(--line);border-radius:6px;padding:10px 6px 4px}
+#cxArcs{display:block;width:100%;height:auto}
+#cxArcs .arc{fill:none;stroke:rgba(108,180,238,.55);stroke-width:1.6;transition:opacity .3s,stroke .3s}
+#cxArcs .arc.dim{opacity:.12}
+#cxArcs .arc.sel{stroke:var(--hi);stroke-width:3.4;opacity:1}
+#cxArcs .hit{fill:none;stroke:transparent;stroke-width:9;cursor:pointer}
+#cxArcs .hit:hover{stroke:rgba(255,169,77,.25)}
+#cxArcs .base{stroke:rgba(205,218,232,.25);stroke-width:1}
+#cxArcs .ctr{fill:var(--earth);cursor:pointer}
+#cxArcs .ctr.sel{fill:var(--hi)}
+#cxArcs .tick{fill:var(--dim);font:12px var(--caps);text-anchor:middle}
+#cxArcs .ctrlab{fill:var(--hi);font:600 15px var(--caps);text-anchor:middle}
+.bands{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 18px}
+.bands button{font-size:13px;padding:5px 10px;letter-spacing:.03em}
+.bands button b{color:var(--hi);font-weight:600;margin-right:3px}
+.cx-tabs{display:flex;gap:8px;align-items:center;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:20px}
+.cx-tog{margin-left:auto;font:400 14px var(--caps);color:var(--dim);display:flex;gap:6px;align-items:center;cursor:pointer}
+.cx-tog input{accent-color:var(--hi)}
+mark{background:rgba(255,169,77,.16);color:var(--hi);border-radius:2px;padding:0 1px}
+.lab{font:600 14px var(--caps);letter-spacing:.1em;color:var(--hi)}
+.ref{font:400 14px var(--caps);letter-spacing:.06em;color:var(--dim);margin-left:8px}
+.jst{font:600 10px var(--caps);letter-spacing:.12em;color:var(--earth);border:1px solid rgba(108,180,238,.5);border-radius:3px;padding:0 4px;vertical-align:2px}
+.wnav,.wnav2{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.wnav2{justify-content:center;margin-top:16px}
+.where{font:400 15px var(--caps);letter-spacing:.06em;color:var(--ink2);text-align:center}
+button:disabled{opacity:.3;cursor:default}
+.pcard{display:grid;grid-template-columns:1fr 2px 1fr;gap:26px;background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:24px 26px;margin-top:14px;min-height:190px}
+.pcard p{font-size:22px;margin:8px 0 0}
+.hinge{background:linear-gradient(to bottom,transparent,var(--hi),transparent);opacity:.6}
+.ctrcard{display:block;text-align:center;border-color:rgba(255,169,77,.5)}
+.ctrcard p{font-size:26px;max-width:30em;margin:12px auto 0}
+.hint{color:var(--dim);font-style:italic;font-size:16px;text-align:center;margin:10px 0}
+.fold{display:flex;flex-direction:column;gap:4px}
+.fband{font:500 13px var(--caps);letter-spacing:.2em;text-transform:uppercase;color:var(--earth);margin:22px 0 6px}
+.frow{display:grid;grid-template-columns:1fr 2px 1fr;gap:18px;padding:10px 14px;border-radius:4px;cursor:pointer;
+  margin:0 calc(var(--d) * .35%);background:rgba(20,23,29,.55);border:1px solid transparent;transition:opacity .3s}
+.frow:hover{border-color:var(--line)}
+.frow.sel{border-color:var(--hi);background:rgba(255,169,77,.06)}
+.frow.dim{opacity:.25}
+.frow p{margin:3px 0 0;font-size:18px;line-height:1.4}
+.frow .ref{margin-left:4px}
+.ctrrow{grid-template-columns:1fr;text-align:center;border-color:rgba(255,169,77,.4);margin-top:16px}
+.ctrrow p{font-size:21px}
+.cx-note{color:var(--dim);font-size:15px;margin-top:34px;border-top:1px solid var(--line);padding-top:12px}
+@media (max-width:760px){
+  .pcard,.frow{grid-template-columns:1fr;gap:12px}
+  .hinge{height:2px;background:linear-gradient(to right,transparent,var(--hi),transparent)}
+  .frow{margin:0}
+  .pcard p{font-size:19px}
+}
+
+/* the four doors on the home page, set in the corners inside the spiral */
+.hero{max-width:1180px}
+.doors{position:absolute;inset:0;pointer-events:none}
+.door{position:absolute;width:24%;height:20%;justify-content:center;pointer-events:auto;display:flex;flex-direction:column;gap:4px;
+  background:var(--bg2);border:1px solid var(--line);border-top:3px solid var(--earth);border-radius:6px;
+  padding:clamp(10px,1.4vw,18px) clamp(12px,1.6vw,22px);transition:border-color .2s,transform .2s,background .2s}
+.door:hover{border-color:var(--hi);background:rgba(255,169,77,.07);transform:translateY(-2px)}
+.door .dt{font:400 clamp(15px,1.6vw,22px)/1.15 var(--serif);color:var(--ink)}
+.door .db{font:400 clamp(11px,1vw,14px) var(--caps);letter-spacing:.1em;color:var(--dim)}
+.door.d1{left:6%;top:14%} .door.d2{right:6%;top:14%;text-align:right}
+.door.d3{left:6%;bottom:13%} .door.d4{right:6%;bottom:13%;text-align:right}
+.hero-in{inset:24% 27%}
+.hero-in h1{white-space:nowrap;font-size:clamp(28px,4.6vw,62px)}
+
+@media (max-width:640px){
+  .hero{aspect-ratio:auto}
+  .hero-in{position:static;inset:auto;padding:30px 0 20px}
+  .hero-in h1{white-space:normal}
+  .doors{position:static;display:grid;gap:12px;padding-bottom:10px}
+  .door{position:static;width:auto;height:auto;text-align:left!important}
+  .door .dt{font-size:22px}
+}
+
+/* ---------- tan theme (Ezekiel, Daniel, and Others) with the paleo-Hebrew border ---------- */
+@font-face{font-family:"Noto Sans Phoenician";font-style:normal;font-weight:400;font-display:block;src:url(../assets/fonts/NotoSansPhoenician-400.woff2) format("woff2")}
+body.theme-tan{--bg:#d8c4a0;--bg2:rgba(236,224,200,.92);--ink:#2b2117;--ink2:#4a3b2a;--dim:#7a6548;
+  --hi:#8c3b1c;--earth:#2f5f7f;--line:rgba(70,50,25,.22);
+  background:radial-gradient(ellipse 1200px 700px at 50% 40%, #e2d1b0, transparent 75%),#d2bc95}
+html:has(body.theme-tan){background:#d2bc95}
+body.theme-tan #stars{display:none}
+body.theme-tan .bar,body.theme-tan .foot{border-color:var(--line)}
+body.theme-tan .foot-mark{filter:invert(1) sepia(1) brightness(.45);opacity:.6}
+.spiral-svg.heb text{font-family:"Noto Sans Phoenician",serif;fill:rgba(60,38,16,.42)}
+.framed .frame-in{inset:16% 16%;justify-content:center}
+.framed .frame-in h1{white-space:normal;font-size:clamp(28px,4vw,52px);margin-bottom:12px}
+.framed .frame-in .items{min-width:min(420px,100%)}
+.framed .frame-in .items a,.framed .frame-in .items .soon{text-align:center}
