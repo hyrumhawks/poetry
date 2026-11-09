@@ -445,6 +445,13 @@ body.theme-tan .foot-mark{filter:invert(1) sepia(1) brightness(.45);opacity:.6}
 .gen .orn{margin:26px auto 30px}
 .poem-head .subtitle{font:italic 400 22px var(--serif);color:var(--ink2);margin:8px 0 0}
 
+/* small chiasms and other structures */
+.struct{max-width:680px;margin:0 auto}
+.sl{margin:0 0 .55em;padding-left:calc(var(--i) * 2.2em);font-size:22px;line-height:1.4;display:flex;gap:14px}
+.sl .sk{flex:0 0 2.2em;font:600 14px var(--caps);letter-spacing:.06em;color:var(--hi);padding-top:5px}
+.sref{text-align:center;font:400 14px var(--caps);letter-spacing:.14em;color:var(--dim);margin-top:26px}
+@media (max-width:640px){.sl{padding-left:calc(var(--i) * 1em);font-size:19px}}
+
 </style>
 </head>
 <body>
@@ -491,6 +498,7 @@ SITE_DATA.catalog = {
       groups: [
         { title: "Chiasm", items: [
           { id: "chiasm70", title: "The 70-Fold Chiasm", note: "70 mirrored pairs around 12:11", route: "chiasm" },
+          { id: "rev-7-13-14", title: "Dedicated to the Lamb", note: "Revelation 7:13–14", route: "poem/rev-7-13-14" },
           { title: "The Septet of Septets", status: "soon" }
         ]},
         { title: "Parallelism", items: [ { title: "Coming", status: "soon" } ] },
@@ -2097,6 +2105,56 @@ window.SITE_DATA=window.SITE_DATA||{};(SITE_DATA.poems=SITE_DATA.poems||{})['cre
 
 </script>
 <script>
+window.SITE_DATA=window.SITE_DATA||{};(SITE_DATA.poems=SITE_DATA.poems||{})['rev-7-13-14']={
+ "id": "rev-7-13-14",
+ "title": "Dedicated to the Lamb",
+ "author": "",
+ "kind": "structure",
+ "intro": "",
+ "ref": "Revelation 7:13–14",
+ "lines": [
+  [
+   "A",
+   0,
+   "What are these which are arrayed in white robes?"
+  ],
+  [
+   "B",
+   1,
+   "and whence came they?"
+  ],
+  [
+   "C",
+   2,
+   "And I said unto him,"
+  ],
+  [
+   "D",
+   3,
+   "Sir, thou knowest."
+  ],
+  [
+   "C′",
+   2,
+   "And he said to me,"
+  ],
+  [
+   "B′",
+   1,
+   "These are they which came out of great tribulation,"
+  ],
+  [
+   "A′",
+   0,
+   "and have washed their robes, and made them white in the blood of the Lamb."
+  ]
+ ],
+ "source_file": "Revelation Chiasmus.xlsx, Micropoetry tab (structure); KJV text from Reference Library new-testament.json",
+ "eyebrow": "Chiasm"
+};
+
+</script>
+<script>
 /* The 70-fold chiasm viewer: folding arcs, band chips, pair-by-pair walk, and the full fold.
    Adapted from the Oct 26-28 deck code (drawArcs, BandStop, FullFold). */
 window.Chiasm = (function(){
@@ -2304,7 +2362,7 @@ function poem(id){
   setTheme(s);
   crumbs([["Home",""], s?[s.title,"section/"+s.id]:["Poems",""], [P.title,""]]);
   document.title = P.title + " · Hyrum W. Hawks";
-  const head = `<div class="poem-head"><p class="eyebrow">${P.kind==="hymns"?"Hymns":"Poem"}</p><h1>${esc(P.title)}</h1>${P.subtitle?`<p class="subtitle">${esc(P.subtitle)}</p>`:""}<div class="by">${esc(P.author)}${P.source?`<a class="star" href="javascript:void 0" data-jump="src" aria-label="Source note">*</a>`:""}</div>${P.intro?`<p class="intro">${esc(P.intro)}</p>`:""}</div>`;
+  const head = `<div class="poem-head"><p class="eyebrow">${esc(P.eyebrow||(P.kind==="hymns"?"Hymns":"Poem"))}</p><h1>${esc(P.title)}</h1>${P.subtitle?`<p class="subtitle">${esc(P.subtitle)}</p>`:""}${P.author||P.source?`<div class="by">`:""}${esc(P.author)}${P.source?`<a class="star" href="javascript:void 0" data-jump="src" aria-label="Source note">*</a>`:""}${P.author||P.source?`</div>`:""}${P.intro?`<p class="intro">${esc(P.intro)}</p>`:""}</div>`;
   if(P.kind==="hymns"){
     app.innerHTML = `<article class="poem">${head}
       <nav class="toc">${P.sections.map(x=>`<a href="#/poem/${id}/${x.n}">${x.n}. ${esc(x.title)}</a>`).join("")}</nav>
@@ -2315,6 +2373,10 @@ function poem(id){
       ${P.verses.map(v => v[0] ? `<p class="vs"><span class="vn">${esc(v[0])}</span>${esc(v[1])}</p>${/were the \w+ day\.$/.test(v[1])?ORN:""}`
                                 : `<p class="vs gap">${esc(v[1])}</p>`).join("")}
       ${sourceHTML(P)}</article>`;
+  } else if(P.kind==="structure"){
+    app.innerHTML = `<article class="poem">${head}
+      <div class="struct">${P.lines.map(l=>`<p class="sl" style="--i:${l[1]}"><span class="sk">${esc(l[0])}</span>${esc(l[2])}</p>`).join("")}</div>
+      ${P.ref?`<p class="sref">${esc(P.ref)}</p>`:""}${sourceHTML(P)}</article>`;
   } else if(P.kind==="two-voice"){
     app.innerHTML = `<article class="poem" id="tv">${head}
       <div class="voices"><button class="on" data-v="">Both voices</button><button data-v="only-b">Blessings</button><button data-v="only-c">Consequences</button></div>
