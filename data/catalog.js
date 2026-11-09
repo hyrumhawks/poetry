@@ -28,6 +28,7 @@ SITE_DATA.catalog = {
       groups: [
         { title: "Chiasm", items: [
           { id: "chiasm70", title: "The 70-Fold Chiasm", note: "70 mirrored pairs around 12:11", route: "chiasm" },
+          { id: "rev-7-13-14", title: "Dedicated to the Lamb", note: "Revelation 7:13–14", route: "poem/rev-7-13-14" },
           { title: "The Septet of Septets", status: "soon" }
         ]},
         { title: "Parallelism", items: [ { title: "Coming", status: "soon" } ] },
