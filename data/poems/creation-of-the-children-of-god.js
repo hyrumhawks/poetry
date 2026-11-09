@@ -157,5 +157,6 @@ window.SITE_DATA=window.SITE_DATA||{};(SITE_DATA.poems=SITE_DATA.poems||{})['cre
  "source": {
   "note": "This is an attempt at mimicking the poetic stylings of Genesis. Note the 1-4, 3-5, 4-6, 7 poetic structure."
  },
- "source_file": "Poetry\\Nathan's Poems\\An Alternate Reading of Genesis 1.docx (1:1 through 2:25)"
+ "source_file": "Poetry\\Nathan's Poems\\An Alternate Reading of Genesis 1.docx (1:1 through 2:25)",
+ "subtitle": "Alternate Genesis 1:1 to 2:25"
 };

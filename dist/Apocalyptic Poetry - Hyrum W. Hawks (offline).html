@@ -443,6 +443,7 @@ body.theme-tan .foot-mark{filter:invert(1) sepia(1) brightness(.45);opacity:.6}
 .gen .vn{font:600 12px var(--caps);letter-spacing:.06em;color:var(--earth);margin-right:8px;vertical-align:2px}
 .gen .vs.gap{text-align:center;color:var(--dim)}
 .gen .orn{margin:26px auto 30px}
+.poem-head .subtitle{font:italic 400 22px var(--serif);color:var(--ink2);margin:8px 0 0}
 
 </style>
 </head>
@@ -476,7 +477,7 @@ SITE_DATA.catalog = {
       groups: [
         { title: null, items: [
           { id: "praise-of-john", title: "The Praise of John the Revelator", note: "Nine hymns", route: "poem/praise-of-john" },
-          { id: "creation-of-the-children-of-god", title: "The Creation of the Children of God", note: "Genesis 1:1 through 2:25", route: "poem/creation-of-the-children-of-god" },
+          { id: "creation-of-the-children-of-god", title: "The Creation of the Children of God", note: "Alternate Genesis 1:1 to 2:25", route: "poem/creation-of-the-children-of-god" },
           { id: "beatitudes-vs-consequences", title: "Beatitudes vs Consequences in the Apocalypse of John the Revelator", note: "Seven paired stanzas", route: "poem/beatitudes-vs-consequences" },
           { title: "And the rest…", status: "soon" }
         ]}
@@ -2090,7 +2091,8 @@ window.SITE_DATA=window.SITE_DATA||{};(SITE_DATA.poems=SITE_DATA.poems||{})['cre
  "source": {
   "note": "This is an attempt at mimicking the poetic stylings of Genesis. Note the 1-4, 3-5, 4-6, 7 poetic structure."
  },
- "source_file": "Poetry\\Nathan's Poems\\An Alternate Reading of Genesis 1.docx (1:1 through 2:25)"
+ "source_file": "Poetry\\Nathan's Poems\\An Alternate Reading of Genesis 1.docx (1:1 through 2:25)",
+ "subtitle": "Alternate Genesis 1:1 to 2:25"
 };
 
 </script>
@@ -2302,7 +2304,7 @@ function poem(id){
   setTheme(s);
   crumbs([["Home",""], s?[s.title,"section/"+s.id]:["Poems",""], [P.title,""]]);
   document.title = P.title + " · Hyrum W. Hawks";
-  const head = `<div class="poem-head"><p class="eyebrow">${P.kind==="hymns"?"Hymns":"Poem"}</p><h1>${esc(P.title)}</h1><div class="by">${esc(P.author)}${P.source?`<a class="star" href="javascript:void 0" data-jump="src" aria-label="Source note">*</a>`:""}</div>${P.intro?`<p class="intro">${esc(P.intro)}</p>`:""}</div>`;
+  const head = `<div class="poem-head"><p class="eyebrow">${P.kind==="hymns"?"Hymns":"Poem"}</p><h1>${esc(P.title)}</h1>${P.subtitle?`<p class="subtitle">${esc(P.subtitle)}</p>`:""}<div class="by">${esc(P.author)}${P.source?`<a class="star" href="javascript:void 0" data-jump="src" aria-label="Source note">*</a>`:""}</div>${P.intro?`<p class="intro">${esc(P.intro)}</p>`:""}</div>`;
   if(P.kind==="hymns"){
     app.innerHTML = `<article class="poem">${head}
       <nav class="toc">${P.sections.map(x=>`<a href="#/poem/${id}/${x.n}">${x.n}. ${esc(x.title)}</a>`).join("")}</nav>

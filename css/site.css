@@ -233,3 +233,4 @@ body.theme-tan .foot-mark{filter:invert(1) sepia(1) brightness(.45);opacity:.6}
 .gen .vn{font:600 12px var(--caps);letter-spacing:.06em;color:var(--earth);margin-right:8px;vertical-align:2px}
 .gen .vs.gap{text-align:center;color:var(--dim)}
 .gen .orn{margin:26px auto 30px}
+.poem-head .subtitle{font:italic 400 22px var(--serif);color:var(--ink2);margin:8px 0 0}
