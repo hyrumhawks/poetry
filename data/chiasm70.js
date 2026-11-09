@@ -991,7 +991,7 @@ window.SITE_DATA=window.SITE_DATA||{};SITE_DATA.chiasm70={
    ]
   },
   {
-   "name": "Silence, trumpets, vials",
+   "name": "Silence, horsemen, harvest",
    "members": [
     "AS",
     "BA",
