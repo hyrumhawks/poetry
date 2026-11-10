@@ -15,6 +15,7 @@ SITE_DATA.catalog = {
         { title: null, items: [
           { id: "praise-of-john", title: "The Praise of John the Revelator", note: "Nine hymns", route: "poem/praise-of-john" },
           { id: "beatitudes-vs-consequences", title: "Beatitudes vs Consequences in the Apocalypse of John the Revelator", note: "Seven paired stanzas", route: "poem/beatitudes-vs-consequences" },
+          { id: "o-my-redeemer", title: "O My Redeemer", note: "A new hymn · tune: Sweet Hour of Prayer", route: "poem/o-my-redeemer" },
           { title: "And the rest…", status: "soon" }
         ]},
         { title: "Speculative", items: [
