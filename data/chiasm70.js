@@ -215,8 +215,8 @@ window.SITE_DATA=window.SITE_DATA||{};SITE_DATA.chiasm70={
    "label": "Q",
    "L": {
     "ref": "3:1",
-    "text": "And unto the servant of the church in Sardis, write; These things saith he who hath the seven stars, which are the seven servants of God; I know thy works, that thou hast a name that thou livest, and art dead.",
-    "src": "CHECK"
+    "text": "And unto the servant of the church in Sardis, write; These things saith he who hath the seven stars, which are the seven servants of God; I know thy works, that thou hast a name that thou livest, and art not dead.",
+    "src": "JST"
    },
    "R": {
     "ref": "20:15",
@@ -229,7 +229,7 @@ window.SITE_DATA=window.SITE_DATA||{};SITE_DATA.chiasm70={
    "L": {
     "ref": "3:2",
     "text": "Be watchful therefore, and strengthen those who remain, who are ready to die: for I have not found thy works perfect before God.",
-    "src": "CHECK"
+    "src": "JST"
    },
    "R": {
     "ref": "20:14",
@@ -345,8 +345,8 @@ window.SITE_DATA=window.SITE_DATA||{};SITE_DATA.chiasm70={
    "label": "Y",
    "L": {
     "ref": "4:4",
-    "text": "And in the midst of the throne were four and twenty seats: and upon the seats I saw four and twenty elders sitting, clothed in white raiment; and they had on their heads crowns of gold.",
-    "src": "CHECK"
+    "text": "And in the midst of the throne were four and twenty seats; and upon the seats I saw four and twenty elders sitting, clothed in white raiment, and they had on their heads crowns like gold.",
+    "src": "JST"
    },
    "R": {
     "ref": "19:13",
@@ -845,7 +845,7 @@ window.SITE_DATA=window.SITE_DATA||{};SITE_DATA.chiasm70={
    "R": {
     "ref": "13:1",
     "text": "And I saw another sign, in the likeness of the kingdoms of the earth; a beast rise up out of the sea, and he stood upon the sand of the sea, having seven heads and ten horns, and upon his horns ten crowns, and upon his heads the name of blasphemy.",
-    "src": "CHECK"
+    "src": "JST"
    }
   },
   {
