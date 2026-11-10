@@ -74,9 +74,10 @@ function poem(id){
       ${sourceHTML(P)}</article>`;
   } else if(P.kind==="verses"){
     app.innerHTML = `<article class="poem gen">${head}
-      ${P.verses.map(v => v[0] ? `<p class="vs"><span class="vn">${esc(v[0])}</span>${esc(v[1])}</p>${/were the \w+ day\.$/.test(v[1])?ORN:""}`
-                                : `<p class="vs gap">${esc(v[1])}</p>`).join("")}
-      ${sourceHTML(P)}</article>`;
+      ${P.verses.map(v => v[0]==="#" ? `<h2 class="vh">${esc(v[1])}</h2>` : v[0]==="##" ? `<h3 class="vh2">${esc(v[1])}</h3>`
+                       : v[0] ? `<p class="vs"><span class="vn">${esc(v[0])}</span>${esc(v[1])}</p>${/were the \w+ day\.$/.test(v[1])?ORN:""}`
+                       : `<p class="vs gap">${esc(v[1])}</p>`).join("")}
+      ${P.ref?`<p class="sref">${esc(P.ref)}</p>`:""}${P.afterword?`<p class="afterword">${esc(P.afterword)}</p>`:""}${sourceHTML(P)}</article>`;
   } else if(P.kind==="structure"){
     app.innerHTML = `<article class="poem">${head}
       <div class="struct">${P.lines.map(l=>l[0]==="#"?`<h3 class="sh">${esc(l[2])}</h3>`:`<p class="sl" style="--i:${l[1]}"><span class="sk">${esc(l[0])}</span>${esc(l[2])}</p>`).join("")}</div>

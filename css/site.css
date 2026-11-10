@@ -255,3 +255,5 @@ body.theme-tan .foot-mark{filter:invert(1) sepia(1) brightness(.45);opacity:.6}
 @media (max-width:760px){.par .ph{display:none}.par .pr{grid-template-columns:1fr;gap:6px}.par .pl{font-size:18px}}
 .struct .sh{font:500 13px var(--caps);letter-spacing:.2em;text-transform:uppercase;color:var(--earth);margin:26px 0 10px}
 .struct .sl .sk{flex-basis:2.6em}
+.gen .vh{font:500 15px var(--caps);letter-spacing:.24em;text-transform:uppercase;color:var(--hi);margin:38px 0 12px;text-align:center}
+.gen .vh2{font:500 12px var(--caps);letter-spacing:.2em;text-transform:uppercase;color:var(--earth);margin:22px 0 8px}
