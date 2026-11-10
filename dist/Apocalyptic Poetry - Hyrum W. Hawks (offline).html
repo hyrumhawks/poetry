@@ -468,6 +468,12 @@ body.theme-tan .foot-mark{filter:invert(1) sepia(1) brightness(.45);opacity:.6}
 .gen .vh{font:500 15px var(--caps);letter-spacing:.24em;text-transform:uppercase;color:var(--hi);margin:38px 0 12px;text-align:center}
 .gen .vh2{font:500 12px var(--caps);letter-spacing:.2em;text-transform:uppercase;color:var(--earth);margin:22px 0 8px}
 
+/* speculative readings: verse, then the reading beneath it */
+.vgloss{margin:4px 0 22px 1.6em;padding-left:14px;border-left:2px solid var(--hi);font-style:italic;color:var(--ink2);font-size:18px;line-height:1.55}
+.preface{max-width:640px;margin:18px auto 8px;text-align:left}
+.preface .spec{text-align:center;font-family:Jost,sans-serif;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--hi);margin-bottom:16px}
+.preface .pn{font-size:18px;line-height:1.6;color:var(--ink2);margin:0 0 12px}
+
 </style>
 </head>
 <body>
@@ -500,9 +506,14 @@ SITE_DATA.catalog = {
       groups: [
         { title: null, items: [
           { id: "praise-of-john", title: "The Praise of John the Revelator", note: "Nine hymns", route: "poem/praise-of-john" },
-          { id: "creation-of-the-children-of-god", title: "The Creation of the Children of God", note: "Alternate Genesis 1:1 to 2:25", route: "poem/creation-of-the-children-of-god" },
           { id: "beatitudes-vs-consequences", title: "Beatitudes vs Consequences in the Apocalypse of John the Revelator", note: "Seven paired stanzas", route: "poem/beatitudes-vs-consequences" },
+          { id: "o-my-redeemer", title: "O My Redeemer", note: "A new hymn · tune: Sweet Hour of Prayer", route: "poem/o-my-redeemer" },
           { title: "And the rest…", status: "soon" }
+        ]},
+        { title: "Speculative", items: [
+          { id: "creation-of-the-children-of-god", title: "The Creation of the Children of God", note: "Alternate Genesis 1:1 to 2:25", route: "poem/creation-of-the-children-of-god" },
+          { id: "salvation-of-the-children-of-god", title: "The Salvation of the Children of God", note: "Alternate Genesis 3:1 to 3:9", route: "poem/salvation-of-the-children-of-god" },
+          { id: "restoration-in-revelation-12", title: "The Restoration in Revelation 12", note: "JST Revelation 12 · a speculative reading", route: "poem/restoration-in-revelation-12" }
         ]}
       ]
     },
@@ -1170,12 +1181,12 @@ window.SITE_DATA=window.SITE_DATA||{};SITE_DATA.chiasm70={
    "label": "BC",
    "L": {
     "ref": "9:18",
-    "text": "And I looked, and behold a white cloud, and upon the cloud one sat like unto the Son of man, having on his head a golden crown, and in his hand a sharp sickle.",
-    "src": "CHECK"
+    "text": "By these three was the third part of men killed, by the fire, and by the smoke, and by the brimstone, which issued out of their mouths.",
+    "src": "KJV"
    },
    "R": {
-    "ref": "14:15-20",
-    "text": "And another angel came out of the temple, crying with a loud voice to him that sat on the cloud, Thrust in thy sickle, and reap: for the time is come for thee to reap; for the harvest of the earth is ripe.",
+    "ref": "14:19-20",
+    "text": "And the angel thrust in his sickle into the earth, and gathered the vine of the earth, and cast it into the great winepress of the wrath of God. And the winepress was trodden without the city, and blood came out of the winepress, even unto the horse bridles, by the space of a thousand and six hundred furlongs.",
     "src": "KJV"
    }
   },
@@ -1318,8 +1329,8 @@ window.SITE_DATA=window.SITE_DATA||{};SITE_DATA.chiasm70={
    },
    "R": {
     "ref": "13:13",
-    "text": "And he doeth great wonders, so that he maketh fire come down from heaven on the earth in the sight of men, And deceiveth them that dwell on the earth by the means of those miracles which he had power to do in the sight of the beast; ...",
-    "src": "CHECK"
+    "text": "And he doeth great wonders, so that he maketh fire come down from heaven on the earth in the sight of men,",
+    "src": "KJV"
    }
   },
   {
@@ -2121,6 +2132,59 @@ window.SITE_DATA=window.SITE_DATA||{};(SITE_DATA.poems=SITE_DATA.poems||{})['cre
 
 </script>
 <script>
+window.SITE_DATA=window.SITE_DATA||{};(SITE_DATA.poems=SITE_DATA.poems||{})['salvation-of-the-children-of-god']={
+ "id": "salvation-of-the-children-of-god",
+ "title": "The Salvation of the Children of God",
+ "author": "Hyrum W. Hawks",
+ "kind": "verses",
+ "intro": "",
+ "subtitle": "Alternate Genesis 3:1 to 3:9",
+ "verses": [
+  [
+   "3:1",
+   "And the child grew in wisdom and stature and in favor with God and man. And the child lived in the garden, his home, and was instructed of his mother and his father and was commanded not to partake of the fruit of the tree of good and evil in the midst of the garden, or he would surely die."
+  ],
+  [
+   "3:2",
+   "And the dragon came to tempt him, for the serpent had grown in knowledge and subtlety, and did speak to the child as he reached accountability. And the dragon said, Are you not wise? Can you not take of the tree and be as your parents, knowing good and evil?"
+  ],
+  [
+   "3:3",
+   "And the child saw that the tree was desirable and he partook and found himself fallen and alone."
+  ],
+  [
+   "3:4",
+   "And his parents knew that he was accountable, and took him before the Lord their God and baptized him in similitude of the Only Begotten of the Father, and did lay hands upon him to Receive the Holy Spirit, in similitude of the death of the man of sin, and the birth of a covenant child of the Lord."
+  ],
+  [
+   "3:5",
+   "And the child did go forth into the lone and dreary wilderness and Satan, the dragon, came before him and did tempt him and try him. But the child did turn to his parents, and to the Father, and did remember the great things the Lord had done for his parents, and did call upon the Father in the name of the Son."
+  ],
+  [
+   "3:6",
+   "Therefore, the Father came to the child and did command that he be washed, anointed, and clothed in the mountain of the Lord. And he was washed, anointed, and clothed in similitude of the washing of birth, the first anointing of the infant, and the swaddling to cover nakedness."
+  ],
+  [
+   "3:7",
+   "And the Father commanded that the child enter into covenant with him, the covenants of Obedience, Sacrifice, the Gospel, Chastity, and Consecration, and to receive these in the manner of the Son, as was taught from the beginning. And in the mountain of the Lord, the child did enter into all the covenants, and gained the tokens and signs necessary to pass the angels who stand as sentinels and enter into the presence of the Lord."
+  ],
+  [
+   "3:8",
+   "And the child became of himself, a man of covenant, and did unite himself with a woman of covenant, and they did pass from the lone and dreary world into the paradisiacal state and on to the veil. And by the permission of the Son, they did pass through the veil into the presence of God, receiving as joint-heirs with the Anointed of the Father all that the Father and the Mother hath."
+  ],
+  [
+   "3:9",
+   "And in the name of the Son did they enter into the rest and work of the eternities, man and woman, and they are gods, children of God, from everlasting to everlasting."
+  ]
+ ],
+ "source": {
+  "note": "This is an alternate reading of Genesis 3, greatly changed by me. I think it's far more descriptive and helpful, but is definitely not standard."
+ },
+ "source_file": "Poetry\\Nathan's Poems\\An Alternate Reading of Genesis 1.docx (3:1–3:9 draft), edited by Nathan in the pre-publication doc Nov 9"
+};
+
+</script>
+<script>
 window.SITE_DATA=window.SITE_DATA||{};(SITE_DATA.poems=SITE_DATA.poems||{})['rev-7-13-14']={
  "id": "rev-7-13-14",
  "title": "Dedicated to the Lamb",
@@ -2565,6 +2629,272 @@ window.SITE_DATA=window.SITE_DATA||{};(SITE_DATA.poems=SITE_DATA.poems||{})['new
 
 </script>
 <script>
+window.SITE_DATA=window.SITE_DATA||{};(SITE_DATA.poems=SITE_DATA.poems||{})['restoration-in-revelation-12']={
+ "id": "restoration-in-revelation-12",
+ "title": "The Restoration in Revelation 12",
+ "author": "Hyrum W. Hawks",
+ "eyebrow": "Speculative",
+ "kind": "verses",
+ "intro": "",
+ "preface": [
+  "Reading is moderate, high on some sections, low on others.",
+  "NOTE: While this chapter is read by many as describing the Former-day Saint Church of Jesus Christ, this has major issues. First, while the man child is identified by many as Christ, He is not born OF the Church, He is married TO the Church. And by the JST, the Woman is not Mary, it is the Church. Therefore, the Woman and the Man Child have to be some other group. The Latter-day Saint reading fits.",
+  "Verses 6-12 are typically read as a 'flashback' to the War in Heaven. I counter that it cannot be as 7 has both the woman and the man child involved. The date has to be after 1844, likely 1846, in Winter Quarters."
+ ],
+ "ref": "Revelation 12 (Joseph Smith Translation)",
+ "verses": [
+  [
+   "#",
+   "1830-1846 The Founding of the Church and Kingdom"
+  ],
+  [
+   "12:1",
+   "And there appeared a great sign in heaven, in the likeness of things on the earth; a woman clothed with the sun, and the moon under her feet, and upon her head a crown of twelve stars."
+  ],
+  [
+   "~",
+   "And the heavens opened and God the Father and Jesus Christ did come, and Christ did restore His Church to the Earth in 1830."
+  ],
+  [
+   "2",
+   "And the woman being with child, cried, travailing in birth, and pained to be delivered."
+  ],
+  [
+   "~",
+   "And the Church suffered as it was born and grew, driven from place to place, until it arrived in Nauvoo."
+  ],
+  [
+   "3",
+   "And she brought forth a man child, who was to rule all nations with a rod of iron; and her child was caught up unto God and his throne."
+  ],
+  [
+   "~",
+   "And the Kingdom of God (the man child) was established in March 1844 (the Council of Fifty), and the first King and his brother, Joseph and Hyrum, were slain, and went to God at his throne."
+  ],
+  [
+   "4",
+   "And there appeared another sign in heaven; and behold, a great red dragon, having seven heads and ten horns, and seven crowns upon his heads. And his tail drew the third part of the stars of heaven, and did cast them to the earth. And the dragon stood before the woman which was delivered, ready to devour her child after it was born."
+  ],
+  [
+   "~",
+   "And Satan, wearing the ten horns of the United States of America, namely its ten presidents, with the tenth president John Tyler from 1841 to 1845, and wearing the seven states (mountains, 17:9) and their sovereignty (crowns), five of which are fallen (see 17:10), namely New York, Pennsylvania, Ohio, Missouri, and Illinois, one which is, namely Iowa in Dec. 1846, and one which is not yet come, namely Utah, stood forth. And a third part of the newly called apostles fell away and did not return, and they were lost. And Satan, using the Federal Government and the State Governments as his avatars, stood before the Church, ready to destroy the Kingdom of God."
+  ],
+  [
+   "5",
+   "And the woman fled into the wilderness, where she had a place prepared of God, that they should feed her there a thousand two hundred and threescore years."
+  ],
+  [
+   "~",
+   "And the Church fled into the wilderness, to Council Bluffs and Winter Quarters, where she was fed for a short time."
+  ],
+  [
+   "#",
+   "A Brief Reprieve - 1846"
+  ],
+  [
+   "6",
+   "And there was war in heaven; Michael and his angels fought against the dragon; and the dragon and his angels fought against Michael;"
+  ],
+  [
+   "~",
+   "Even as the Earthly battles occurred, Michael and the heavenly hosts hedged up the way of the government, even as the government fought against heaven."
+  ],
+  [
+   "7",
+   "And the dragon prevailed not against Michael, neither the child, nor the woman which was the church of God, who had been delivered of her pains, and brought forth the kingdom of our God and his Christ."
+  ],
+  [
+   "~",
+   "And Satan, using his avatars in the USA, could not prevail against the heavenly hosts, nor the Kingdom of God, nor the Church of God, who had produced the Kingdom of our God and Christ in great pains."
+  ],
+  [
+   "8",
+   "Neither was there place found in heaven for the great dragon, who was cast out; that old serpent called the devil, and also called Satan, which deceiveth the whole world; he was cast out into the earth; and his angels were cast out with him."
+  ],
+  [
+   "~",
+   "And Satan, using his avatars, could not prevail in heaven, and Satan and his angels, who deceive the whole world, were cast away from the Church in 1846 and back to Jefferson, and Springfield, and Washington."
+  ],
+  [
+   "9-11",
+   "And I heard a loud voice saying in heaven, Now is come salvation, and strength, and the kingdom of our God, and the power of his Christ; For the accuser of our brethren is cast down, which accused them before our God day and night. For they have overcome him by the blood of the Lamb, and by the word of their testimony; for they loved not their own lives, but kept the testimony even unto death. Therefore, rejoice O heavens, and ye that dwell in them."
+  ],
+  [
+   "~",
+   "And the heavens cried that salvation, strength, and the Kingdom of our God and the power of his Christ are come. The accuser, Satan, is cast down, which accused the Saints before God, day and night. The Saints have overcome the devil by the blood of the Lamb, and by the word of their testimony, for they loved not their own lives (Kirtland, Missouri, Nauvoo), but kept their testimony unto death. Therefore, rejoice O heavens, and ye that dwell in them."
+  ],
+  [
+   "12",
+   "And after these things I heard another voice saying, Woe to the inhabiters of the earth, yea, and they who dwell upon the islands of the sea! for the devil is come down unto you, having great wrath, because he knoweth that he hath but a short time."
+  ],
+  [
+   "~",
+   "No change to verse 12."
+  ],
+  [
+   "#",
+   "1847 On - The Saints Spread"
+  ],
+  [
+   "13",
+   "For when the dragon saw that he was cast unto the earth, he persecuted the woman which brought forth the man child."
+  ],
+  [
+   "~",
+   "And when Satan realized he and his avatars were cast back, he began again to guide his avatars in the US to persecute the Church who brought forth the Kingdom of God."
+  ],
+  [
+   "14",
+   "Therefore, to the woman were given two wings of a great eagle, that she might flee into the wilderness, into her place, where she is nourished for a time, and times, and half a time, from the face of the serpent."
+  ],
+  [
+   "~",
+   "But some in the USA, who were yet of the great eagle, gave the Church means to flee into the wilderness, by the Mormon Battalion, and by promises to allow settlement in the West, where was found This is the Place, in Deseret, where she is nourished for a part of a time (ten years in this case) away from the USA."
+  ],
+  [
+   "15",
+   "And the serpent casteth out of his mouth water as a flood after the woman, that he might cause her to be carried away of the flood."
+  ],
+  [
+   "~",
+   "And after ten years, Satan used his avatars in the federal government to send Johnston's Army to invade and conquer the Church and the Saints."
+  ],
+  [
+   "16",
+   "And the earth helpeth the woman, and the earth openeth her mouth, and swalloweth up the flood which the dragon casteth out of his mouth."
+  ],
+  [
+   "~",
+   "But the Earth itself helped the Church, for the Church had learned the ways of the wilderness, and they delayed the army of the dragon, Johnston's Folly, and the Earth swallowed up the army that it could not advance through the bitter winter."
+  ],
+  [
+   "17",
+   "Therefore, the dragon was wroth with the woman, and went to make war with the remnant of her seed, which keep the commandments of God, and have the testimony of Jesus Christ."
+  ],
+  [
+   "~",
+   "But Satan and his avatars in the USA were still angry with the Church, and made war against the remnant of the Church in Deseret that keep the commandments of God and have the testimony of Jesus Christ, persecuting them from 1857 on."
+  ]
+ ]
+};
+
+</script>
+<script>
+window.SITE_DATA=window.SITE_DATA||{};(SITE_DATA.poems=SITE_DATA.poems||{})['o-my-redeemer']={
+ "id": "o-my-redeemer",
+ "title": "O My Redeemer",
+ "author": "Hyrum W. Hawks",
+ "eyebrow": "A New Hymn",
+ "kind": "structure",
+ "intro": "",
+ "subtitle": "Tune: Sweet Hour of Prayer (Hymns, no. 142)",
+ "lines": [
+  [
+   "#",
+   0,
+   "1"
+  ],
+  [
+   "",
+   0,
+   "O my Redeemer, thou who came,"
+  ],
+  [
+   "",
+   0,
+   "As gracious Son to save and reign,"
+  ],
+  [
+   "",
+   0,
+   "If we but turn our hearts to thee,"
+  ],
+  [
+   "",
+   0,
+   "We'll be joint heirs forever free."
+  ],
+  [
+   "#",
+   0,
+   "2"
+  ],
+  [
+   "",
+   0,
+   "Each morn to night through sin and loss,"
+  ],
+  [
+   "",
+   0,
+   "Thy pow'r in us refines the dross."
+  ],
+  [
+   "",
+   0,
+   "Thy grace will ever break our yoke,"
+  ],
+  [
+   "",
+   0,
+   "And through thy mercy, death revoke."
+  ],
+  [
+   "#",
+   0,
+   "3"
+  ],
+  [
+   "",
+   0,
+   "We covenant to be thy child,"
+  ],
+  [
+   "",
+   0,
+   "Forever pure and undefiled."
+  ],
+  [
+   "",
+   0,
+   "Exalted, we shall dwell with thee,"
+  ],
+  [
+   "",
+   0,
+   "And live in joy eternally."
+  ],
+  [
+   "#",
+   0,
+   "Chorus"
+  ],
+  [
+   "",
+   0,
+   "O let my mouth for e'er proclaim"
+  ],
+  [
+   "",
+   0,
+   "Salvation in thy holy name."
+  ],
+  [
+   "",
+   0,
+   "My ears be tuned, alive to thee,"
+  ],
+  [
+   "",
+   0,
+   "My spirit sing, unfettered be."
+  ]
+ ],
+ "source_file": "Hymns\\O_My_Redeemer_SweetHour.mscz (Nov 1); text from the pre-publication doc, Nov 9"
+};
+
+</script>
+<script>
 /* The 70-fold chiasm viewer: folding arcs, band chips, pair-by-pair walk, and the full fold.
    Adapted from the Oct 26-28 deck code (drawArcs, BandStop, FullFold). */
 window.Chiasm = (function(){
@@ -2772,7 +3102,7 @@ function poem(id){
   setTheme(s);
   crumbs([["Home",""], s?[s.title,"section/"+s.id]:["Poems",""], [P.title,""]]);
   document.title = P.title + " · Hyrum W. Hawks";
-  const head = `<div class="poem-head"><p class="eyebrow">${esc(P.eyebrow||(P.kind==="hymns"?"Hymns":"Poem"))}</p><h1>${esc(P.title)}</h1>${P.subtitle?`<p class="subtitle">${esc(P.subtitle)}</p>`:""}${P.author||P.source?`<div class="by">`:""}${esc(P.author)}${P.source?`<a class="star" href="javascript:void 0" data-jump="src" aria-label="Source note">*</a>`:""}${P.author||P.source?`</div>`:""}${P.intro?`<p class="intro">${esc(P.intro)}</p>`:""}</div>`;
+  const head = `<div class="poem-head"><p class="eyebrow">${esc(P.eyebrow||(P.kind==="hymns"?"Hymns":"Poem"))}</p><h1>${esc(P.title)}</h1>${P.subtitle?`<p class="subtitle">${esc(P.subtitle)}</p>`:""}${P.author||P.source?`<div class="by">`:""}${esc(P.author)}${P.source?`<a class="star" href="javascript:void 0" data-jump="src" aria-label="Source note">*</a>`:""}${P.author||P.source?`</div>`:""}${P.intro?`<p class="intro">${esc(P.intro)}</p>`:""}${P.preface?`<div class="preface">${P.preface.map((x,i)=>`<p class="${i?"pn":"spec"}">${esc(x)}</p>`).join("")}</div>`:""}</div>`;
   if(P.kind==="hymns"){
     app.innerHTML = `<article class="poem">${head}
       <nav class="toc">${P.sections.map(x=>`<a href="#/poem/${id}/${x.n}">${x.n}. ${esc(x.title)}</a>`).join("")}</nav>
@@ -2780,7 +3110,7 @@ function poem(id){
       ${sourceHTML(P)}</article>`;
   } else if(P.kind==="verses"){
     app.innerHTML = `<article class="poem gen">${head}
-      ${P.verses.map(v => v[0]==="#" ? `<h2 class="vh">${esc(v[1])}</h2>` : v[0]==="##" ? `<h3 class="vh2">${esc(v[1])}</h3>`
+      ${P.verses.map(v => v[0]==="#" ? `<h2 class="vh">${esc(v[1])}</h2>` : v[0]==="##" ? `<h3 class="vh2">${esc(v[1])}</h3>` : v[0]==="~" ? `<p class="vgloss">${esc(v[1])}</p>`
                        : v[0] ? `<p class="vs"><span class="vn">${esc(v[0])}</span>${esc(v[1])}</p>${/were the \w+ day\.$/.test(v[1])?ORN:""}`
                        : `<p class="vs gap">${esc(v[1])}</p>`).join("")}
       ${P.ref?`<p class="sref">${esc(P.ref)}</p>`:""}${P.afterword?`<p class="afterword">${esc(P.afterword)}</p>`:""}${sourceHTML(P)}</article>`;

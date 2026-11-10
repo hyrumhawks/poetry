@@ -618,12 +618,12 @@ window.SITE_DATA=window.SITE_DATA||{};SITE_DATA.chiasm70={
    "label": "BC",
    "L": {
     "ref": "9:18",
-    "text": "And I looked, and behold a white cloud, and upon the cloud one sat like unto the Son of man, having on his head a golden crown, and in his hand a sharp sickle.",
-    "src": "CHECK"
+    "text": "By these three was the third part of men killed, by the fire, and by the smoke, and by the brimstone, which issued out of their mouths.",
+    "src": "KJV"
    },
    "R": {
-    "ref": "14:15-20",
-    "text": "And another angel came out of the temple, crying with a loud voice to him that sat on the cloud, Thrust in thy sickle, and reap: for the time is come for thee to reap; for the harvest of the earth is ripe.",
+    "ref": "14:19-20",
+    "text": "And the angel thrust in his sickle into the earth, and gathered the vine of the earth, and cast it into the great winepress of the wrath of God. And the winepress was trodden without the city, and blood came out of the winepress, even unto the horse bridles, by the space of a thousand and six hundred furlongs.",
     "src": "KJV"
    }
   },
@@ -766,8 +766,8 @@ window.SITE_DATA=window.SITE_DATA||{};SITE_DATA.chiasm70={
    },
    "R": {
     "ref": "13:13",
-    "text": "And he doeth great wonders, so that he maketh fire come down from heaven on the earth in the sight of men, And deceiveth them that dwell on the earth by the means of those miracles which he had power to do in the sight of the beast; ...",
-    "src": "CHECK"
+    "text": "And he doeth great wonders, so that he maketh fire come down from heaven on the earth in the sight of men,",
+    "src": "KJV"
    }
   },
   {
