@@ -30,7 +30,7 @@ window.SITE_DATA=window.SITE_DATA||{};(SITE_DATA.poems=SITE_DATA.poems||{})['res
   ],
   [
    "~",
-   "And the Church suffered as it was born and grew, driven from place to place, until it arrived in Nauvoo."
+   "And the Church suffered as it came forth and spread, driven from place to place, until it arrived in Nauvoo."
   ],
   [
    "3",
