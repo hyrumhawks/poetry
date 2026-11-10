@@ -242,3 +242,14 @@ body.theme-tan .foot-mark{filter:invert(1) sepia(1) brightness(.45);opacity:.6}
 .sref{text-align:center;font:400 14px var(--caps);letter-spacing:.14em;color:var(--dim);margin-top:26px}
 @media (max-width:640px){.sl{padding-left:calc(var(--i) * 1em);font-size:19px}}
 .afterword{text-align:center;font-style:italic;color:var(--ink2);font-size:19px;margin-top:22px}
+
+/* parallel passages, side by side */
+.poem.wide{max-width:1080px}
+.par .ph,.par .pr{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.par .ph{font:500 13px var(--caps);letter-spacing:.2em;text-transform:uppercase;color:var(--earth);border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:10px}
+.par .pr{padding:10px 12px;border-radius:5px;cursor:pointer;border:1px solid transparent;transition:background .2s}
+.par .pr:hover{background:rgba(255,255,255,.03)}
+.par .pr.on{border-color:var(--hi);background:rgba(255,169,77,.06)}
+.par .pl{margin:0;font-size:20px;line-height:1.45;display:flex;gap:14px}
+.par .sk{flex:0 0 1.8em;font:600 14px var(--caps);color:var(--hi);padding-top:4px}
+@media (max-width:760px){.par .ph{display:none}.par .pr{grid-template-columns:1fr;gap:6px}.par .pl{font-size:18px}}

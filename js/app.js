@@ -81,6 +81,15 @@ function poem(id){
     app.innerHTML = `<article class="poem">${head}
       <div class="struct">${P.lines.map(l=>`<p class="sl" style="--i:${l[1]}"><span class="sk">${esc(l[0])}</span>${esc(l[2])}</p>`).join("")}</div>
       ${P.ref?`<p class="sref">${esc(P.ref)}</p>`:""}${P.afterword?`<p class="afterword">${esc(P.afterword)}</p>`:""}${sourceHTML(P)}</article>`;
+  } else if(P.kind==="parallel"){
+    const n = Math.max(P.left[1].length, P.right[1].length);
+    let rows = "";
+    for(let i=0;i<n;i++){ const a=P.left[1][i]||["",""], b=P.right[1][i]||["",""];
+      rows += `<div class="pr" data-i="${i}"><p class="pl"><span class="sk">${esc(a[0])}</span>${esc(a[1])}</p><p class="pl"><span class="sk">${esc(b[0])}</span>${esc(b[1])}</p></div>`; }
+    app.innerHTML = `<article class="poem wide">${head}
+      <div class="par"><div class="ph"><span>${esc(P.left[0])}</span><span>${esc(P.right[0])}</span></div>${rows}</div>
+      ${P.afterword?`<p class="afterword">${esc(P.afterword)}</p>`:""}${sourceHTML(P)}</article>`;
+    app.querySelectorAll(".pr").forEach(r => r.onclick = () => app.querySelectorAll(".pr").forEach(x => x.classList.toggle("on", x===r && !r.classList.contains("on"))));
   } else if(P.kind==="two-voice"){
     app.innerHTML = `<article class="poem" id="tv">${head}
       <div class="voices"><button class="on" data-v="">Both voices</button><button data-v="only-b">Blessings</button><button data-v="only-c">Consequences</button></div>

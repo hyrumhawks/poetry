@@ -453,6 +453,17 @@ body.theme-tan .foot-mark{filter:invert(1) sepia(1) brightness(.45);opacity:.6}
 @media (max-width:640px){.sl{padding-left:calc(var(--i) * 1em);font-size:19px}}
 .afterword{text-align:center;font-style:italic;color:var(--ink2);font-size:19px;margin-top:22px}
 
+/* parallel passages, side by side */
+.poem.wide{max-width:1080px}
+.par .ph,.par .pr{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.par .ph{font:500 13px var(--caps);letter-spacing:.2em;text-transform:uppercase;color:var(--earth);border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:10px}
+.par .pr{padding:10px 12px;border-radius:5px;cursor:pointer;border:1px solid transparent;transition:background .2s}
+.par .pr:hover{background:rgba(255,255,255,.03)}
+.par .pr.on{border-color:var(--hi);background:rgba(255,169,77,.06)}
+.par .pl{margin:0;font-size:20px;line-height:1.45;display:flex;gap:14px}
+.par .sk{flex:0 0 1.8em;font:600 14px var(--caps);color:var(--hi);padding-top:4px}
+@media (max-width:760px){.par .ph{display:none}.par .pr{grid-template-columns:1fr;gap:6px}.par .pl{font-size:18px}}
+
 </style>
 </head>
 <body>
@@ -502,7 +513,7 @@ SITE_DATA.catalog = {
           { id: "rev-7-13-14", title: "Dedicated to the Lamb", note: "Revelation 7:13–14", route: "poem/rev-7-13-14" },
           { title: "The Septet of Septets", status: "soon" }
         ]},
-        { title: "Parallelism", items: [ { title: "Coming", status: "soon" } ] },
+        { title: "Parallelism", items: [ { id: "lamb-overcomes-dragon", title: "The Lamb Overcomes the Dragon", note: "JST Revelation 12:6–11 and Revelation 20:1–6", route: "poem/lamb-overcomes-dragon" } ] },
         { title: "The Rest", items: [ { title: "Coming", status: "soon" } ] }
       ]
     },
@@ -2157,6 +2168,84 @@ window.SITE_DATA=window.SITE_DATA||{};(SITE_DATA.poems=SITE_DATA.poems||{})['rev
 
 </script>
 <script>
+window.SITE_DATA=window.SITE_DATA||{};(SITE_DATA.poems=SITE_DATA.poems||{})['lamb-overcomes-dragon']={
+ "id": "lamb-overcomes-dragon",
+ "title": "The Lamb Overcomes the Dragon",
+ "author": "",
+ "eyebrow": "Parallelism",
+ "kind": "parallel",
+ "intro": "",
+ "left": [
+  "JST Revelation 12:6–11",
+  [
+   [
+    "A",
+    "And there was war in heaven;"
+   ],
+   [
+    "B",
+    "Michael and his angels fought against the dragon; and the dragon and his angels fought against Michael; …"
+   ],
+   [
+    "C",
+    "Neither was there place found in heaven for the great dragon, who was cast out; …"
+   ],
+   [
+    "D",
+    "called Satan, which deceiveth the whole world;"
+   ],
+   [
+    "E",
+    "he was cast out into the earth; and his angels were cast out with him. …"
+   ],
+   [
+    "F",
+    "Now is come salvation, and strength, and the kingdom of our God, and the power of his Christ; …"
+   ],
+   [
+    "G",
+    "For they have overcome him by the blood of the Lamb, and by the word of their testimony; for they loved not their own lives, but kept the testimony even unto death. …"
+   ]
+  ]
+ ],
+ "right": [
+  "Revelation 20:1–6",
+  [
+   [
+    "A′",
+    "And I saw an angel come down from heaven, having the key of the bottomless pit and a great chain in his hand."
+   ],
+   [
+    "B′",
+    "And he laid hold on the dragon, that old serpent, which is the Devil, and Satan, and bound him a thousand years,"
+   ],
+   [
+    "C′",
+    "And cast him into the bottomless pit, and shut him up,"
+   ],
+   [
+    "D′",
+    "and set a seal upon him, that he should deceive the nations no more, till the thousand years should be fulfilled:"
+   ],
+   [
+    "E′",
+    "and after that he must be loosed a little season."
+   ],
+   [
+    "F′",
+    "And I saw thrones, and they sat upon them, and judgment was given unto them: …"
+   ],
+   [
+    "G′",
+    "for the witness of Jesus, and for the word of God, … and they lived and reigned with Christ a thousand years. … they shall be priests of God and of Christ, and shall reign with him a thousand years."
+   ]
+  ]
+ ],
+ "source_file": "Labels dictated by Nathan Nov 9 (JST 12:6–11 against KJV 20:1–6); text checked word for word against Gospel Library JST Rev 12 and new-testament.json"
+};
+
+</script>
+<script>
 /* The 70-fold chiasm viewer: folding arcs, band chips, pair-by-pair walk, and the full fold.
    Adapted from the Oct 26-28 deck code (drawArcs, BandStop, FullFold). */
 window.Chiasm = (function(){
@@ -2379,6 +2468,15 @@ function poem(id){
     app.innerHTML = `<article class="poem">${head}
       <div class="struct">${P.lines.map(l=>`<p class="sl" style="--i:${l[1]}"><span class="sk">${esc(l[0])}</span>${esc(l[2])}</p>`).join("")}</div>
       ${P.ref?`<p class="sref">${esc(P.ref)}</p>`:""}${P.afterword?`<p class="afterword">${esc(P.afterword)}</p>`:""}${sourceHTML(P)}</article>`;
+  } else if(P.kind==="parallel"){
+    const n = Math.max(P.left[1].length, P.right[1].length);
+    let rows = "";
+    for(let i=0;i<n;i++){ const a=P.left[1][i]||["",""], b=P.right[1][i]||["",""];
+      rows += `<div class="pr" data-i="${i}"><p class="pl"><span class="sk">${esc(a[0])}</span>${esc(a[1])}</p><p class="pl"><span class="sk">${esc(b[0])}</span>${esc(b[1])}</p></div>`; }
+    app.innerHTML = `<article class="poem wide">${head}
+      <div class="par"><div class="ph"><span>${esc(P.left[0])}</span><span>${esc(P.right[0])}</span></div>${rows}</div>
+      ${P.afterword?`<p class="afterword">${esc(P.afterword)}</p>`:""}${sourceHTML(P)}</article>`;
+    app.querySelectorAll(".pr").forEach(r => r.onclick = () => app.querySelectorAll(".pr").forEach(x => x.classList.toggle("on", x===r && !r.classList.contains("on"))));
   } else if(P.kind==="two-voice"){
     app.innerHTML = `<article class="poem" id="tv">${head}
       <div class="voices"><button class="on" data-v="">Both voices</button><button data-v="only-b">Blessings</button><button data-v="only-c">Consequences</button></div>
