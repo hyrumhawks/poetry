@@ -31,7 +31,7 @@ SITE_DATA.catalog = {
           { id: "rev-7-13-14", title: "Dedicated to the Lamb", note: "Revelation 7:13–14", route: "poem/rev-7-13-14" },
           { title: "The Septet of Septets", status: "soon" }
         ]},
-        { title: "Parallelism", items: [ { id: "lamb-overcomes-dragon", title: "The Lamb Overcomes the Dragon", note: "JST Revelation 12:6–11 and Revelation 20:1–6", route: "poem/lamb-overcomes-dragon" } ] },
+        { title: "Parallelism", items: [ { id: "lamb-overcomes-dragon", title: "The Lamb Overcomes the Dragon", note: "JST Revelation 12:6–11 and Revelation 20:1–6", route: "poem/lamb-overcomes-dragon" }, { id: "cast-down-vs-enthroned", title: "Cast Down vs Enthroned", note: "Revelation 20:1–15", route: "poem/cast-down-vs-enthroned" } ] },
         { title: "The Rest", items: [ { title: "Coming", status: "soon" } ] }
       ]
     },

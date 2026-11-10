@@ -79,7 +79,7 @@ function poem(id){
       ${sourceHTML(P)}</article>`;
   } else if(P.kind==="structure"){
     app.innerHTML = `<article class="poem">${head}
-      <div class="struct">${P.lines.map(l=>`<p class="sl" style="--i:${l[1]}"><span class="sk">${esc(l[0])}</span>${esc(l[2])}</p>`).join("")}</div>
+      <div class="struct">${P.lines.map(l=>l[0]==="#"?`<h3 class="sh">${esc(l[2])}</h3>`:`<p class="sl" style="--i:${l[1]}"><span class="sk">${esc(l[0])}</span>${esc(l[2])}</p>`).join("")}</div>
       ${P.ref?`<p class="sref">${esc(P.ref)}</p>`:""}${P.afterword?`<p class="afterword">${esc(P.afterword)}</p>`:""}${sourceHTML(P)}</article>`;
   } else if(P.kind==="parallel"){
     const n = Math.max(P.left[1].length, P.right[1].length);

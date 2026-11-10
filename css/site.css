@@ -253,3 +253,5 @@ body.theme-tan .foot-mark{filter:invert(1) sepia(1) brightness(.45);opacity:.6}
 .par .pl{margin:0;font-size:20px;line-height:1.45;display:flex;gap:14px}
 .par .sk{flex:0 0 1.8em;font:600 14px var(--caps);color:var(--hi);padding-top:4px}
 @media (max-width:760px){.par .ph{display:none}.par .pr{grid-template-columns:1fr;gap:6px}.par .pl{font-size:18px}}
+.struct .sh{font:500 13px var(--caps);letter-spacing:.2em;text-transform:uppercase;color:var(--earth);margin:26px 0 10px}
+.struct .sl .sk{flex-basis:2.6em}
