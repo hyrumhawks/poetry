@@ -66,7 +66,7 @@ function poem(id){
   setTheme(s);
   crumbs([["Home",""], s?[s.title,"section/"+s.id]:["Poems",""], [P.title,""]]);
   document.title = P.title + " · Hyrum W. Hawks";
-  const head = `<div class="poem-head"><p class="eyebrow">${esc(P.eyebrow||(P.kind==="hymns"?"Hymns":"Poem"))}</p><h1>${esc(P.title)}</h1>${P.subtitle?`<p class="subtitle">${esc(P.subtitle)}</p>`:""}${P.author||P.source?`<div class="by">`:""}${esc(P.author)}${P.source?`<a class="star" href="javascript:void 0" data-jump="src" aria-label="Source note">*</a>`:""}${P.author||P.source?`</div>`:""}${P.intro?`<p class="intro">${esc(P.intro)}</p>`:""}</div>`;
+  const head = `<div class="poem-head"><p class="eyebrow">${esc(P.eyebrow||(P.kind==="hymns"?"Hymns":"Poem"))}</p><h1>${esc(P.title)}</h1>${P.subtitle?`<p class="subtitle">${esc(P.subtitle)}</p>`:""}${P.author||P.source?`<div class="by">`:""}${esc(P.author)}${P.source?`<a class="star" href="javascript:void 0" data-jump="src" aria-label="Source note">*</a>`:""}${P.author||P.source?`</div>`:""}${P.intro?`<p class="intro">${esc(P.intro)}</p>`:""}${P.preface?`<div class="preface">${P.preface.map((x,i)=>`<p class="${i?"pn":"spec"}">${esc(x)}</p>`).join("")}</div>`:""}</div>`;
   if(P.kind==="hymns"){
     app.innerHTML = `<article class="poem">${head}
       <nav class="toc">${P.sections.map(x=>`<a href="#/poem/${id}/${x.n}">${x.n}. ${esc(x.title)}</a>`).join("")}</nav>
@@ -74,7 +74,7 @@ function poem(id){
       ${sourceHTML(P)}</article>`;
   } else if(P.kind==="verses"){
     app.innerHTML = `<article class="poem gen">${head}
-      ${P.verses.map(v => v[0]==="#" ? `<h2 class="vh">${esc(v[1])}</h2>` : v[0]==="##" ? `<h3 class="vh2">${esc(v[1])}</h3>`
+      ${P.verses.map(v => v[0]==="#" ? `<h2 class="vh">${esc(v[1])}</h2>` : v[0]==="##" ? `<h3 class="vh2">${esc(v[1])}</h3>` : v[0]==="~" ? `<p class="vgloss">${esc(v[1])}</p>`
                        : v[0] ? `<p class="vs"><span class="vn">${esc(v[0])}</span>${esc(v[1])}</p>${/were the \w+ day\.$/.test(v[1])?ORN:""}`
                        : `<p class="vs gap">${esc(v[1])}</p>`).join("")}
       ${P.ref?`<p class="sref">${esc(P.ref)}</p>`:""}${P.afterword?`<p class="afterword">${esc(P.afterword)}</p>`:""}${sourceHTML(P)}</article>`;

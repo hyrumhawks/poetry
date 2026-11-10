@@ -17,6 +17,9 @@ SITE_DATA.catalog = {
           { id: "creation-of-the-children-of-god", title: "The Creation of the Children of God", note: "Alternate Genesis 1:1 to 2:25", route: "poem/creation-of-the-children-of-god" },
           { id: "beatitudes-vs-consequences", title: "Beatitudes vs Consequences in the Apocalypse of John the Revelator", note: "Seven paired stanzas", route: "poem/beatitudes-vs-consequences" },
           { title: "And the rest…", status: "soon" }
+        ]},
+        { title: "Speculative", items: [
+          { id: "restoration-in-revelation-12", title: "The Restoration in Revelation 12", note: "JST Revelation 12 · a speculative reading", route: "poem/restoration-in-revelation-12" }
         ]}
       ]
     },

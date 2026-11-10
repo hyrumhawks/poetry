@@ -257,3 +257,9 @@ body.theme-tan .foot-mark{filter:invert(1) sepia(1) brightness(.45);opacity:.6}
 .struct .sl .sk{flex-basis:2.6em}
 .gen .vh{font:500 15px var(--caps);letter-spacing:.24em;text-transform:uppercase;color:var(--hi);margin:38px 0 12px;text-align:center}
 .gen .vh2{font:500 12px var(--caps);letter-spacing:.2em;text-transform:uppercase;color:var(--earth);margin:22px 0 8px}
+
+/* speculative readings: verse, then the reading beneath it */
+.vgloss{margin:4px 0 22px 1.6em;padding-left:14px;border-left:2px solid var(--hi);font-style:italic;color:var(--ink2);font-size:18px;line-height:1.55}
+.preface{max-width:640px;margin:18px auto 8px;text-align:left}
+.preface .spec{text-align:center;font-family:Jost,sans-serif;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--hi);margin-bottom:16px}
+.preface .pn{font-size:18px;line-height:1.6;color:var(--ink2);margin:0 0 12px}
