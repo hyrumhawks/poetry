@@ -34,6 +34,7 @@ SITE_DATA.catalog = {
         { title: "Chiasm", items: [
           { id: "chiasm70", title: "The 70-Fold Chiasm", note: "70 mirrored pairs around 12:11", route: "chiasm" },
           { id: "rev-7-13-14", title: "Dedicated to the Lamb", note: "Revelation 7:13–14", route: "poem/rev-7-13-14" },
+          { id: "seven-churches", title: "The Seven Churches", note: "Revelation 2–3 · a triple chiasm", route: "poem/seven-churches" },
           { title: "The Septet of Septets", status: "soon" }
         ]},
         { title: "Parallelism", items: [ { id: "lamb-overcomes-dragon", title: "The Lamb Overcomes the Dragon", note: "JST Revelation 12:6–11 and Revelation 20:1–6", route: "poem/lamb-overcomes-dragon" }, { id: "cast-down-vs-enthroned", title: "Cast Down vs Enthroned", note: "Revelation 20:1–15", route: "poem/cast-down-vs-enthroned" } ] },

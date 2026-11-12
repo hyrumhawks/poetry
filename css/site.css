@@ -263,3 +263,14 @@ body.theme-tan .foot-mark{filter:invert(1) sepia(1) brightness(.45);opacity:.6}
 .preface{max-width:640px;margin:18px auto 8px;text-align:left}
 .preface .spec{text-align:center;font-family:Jost,sans-serif;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--hi);margin-bottom:16px}
 .preface .pn{font-size:18px;line-height:1.6;color:var(--ink2);margin:0 0 12px}
+
+/* seven churches: three-column chiasm */
+.ch3{margin:26px 0;border-top:1px solid rgba(236,235,231,.15)}
+.ch3r{display:grid;grid-template-columns:2.6em 1fr 1.25fr 1.5fr;gap:14px;padding:10px 8px;border-bottom:1px solid rgba(236,235,231,.1);align-items:start}
+.ch3h{font-family:Jost,sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.ch3r .ck{font-family:Jost,sans-serif;color:var(--earth);font-weight:600}
+.ch3r .c2,.ch3r .c3{padding-left:calc(var(--lv,0)*1.1em)}
+.ch3r .c2 small{display:block;color:var(--hi);font-size:.8em;font-style:italic;margin-top:2px}
+.ch3r .c3{color:var(--ink2)}
+.ch3r.ctr{background:rgba(255,169,77,.08);border-left:2px solid var(--hi)}
+@media (max-width:760px){.ch3r{grid-template-columns:2em 1fr;}.ch3r .c1,.ch3r .c2,.ch3r .c3{grid-column:2}.ch3h span:not(:first-child){display:none}}

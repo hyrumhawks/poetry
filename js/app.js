@@ -91,6 +91,11 @@ function poem(id){
       <div class="par"><div class="ph"><span>${esc(P.left[0])}</span><span>${esc(P.right[0])}</span></div>${rows}</div>
       ${P.afterword?`<p class="afterword">${esc(P.afterword)}</p>`:""}${sourceHTML(P)}</article>`;
     app.querySelectorAll(".pr").forEach(r => r.onclick = () => app.querySelectorAll(".pr").forEach(x => x.classList.toggle("on", x===r && !r.classList.contains("on"))));
+  } else if(P.kind==="churches"){
+    app.innerHTML = `<article class="poem wide">${head}
+      <div class="ch3"><div class="ch3r ch3h"><span></span>${P.cols.map(c=>`<span>${esc(c)}</span>`).join("")}</div>
+      ${P.rows.map(r=>`<div class="ch3r${r.lv===3?" ctr":""}" style="--lv:${r.lv}"><span class="ck">${esc(r.k)}</span><span class="c1">${esc(r.i1)}</span><span class="c2">${esc(r.i2)}<small>${esc(r.st)}</small></span><span class="c3">${esc(r.e)}</span></div>`).join("")}</div>
+      ${P.afterword?`<p class="afterword">${esc(P.afterword)}</p>`:""}${sourceHTML(P)}</article>`;
   } else if(P.kind==="two-voice"){
     app.innerHTML = `<article class="poem" id="tv">${head}
       <div class="voices"><button class="on" data-v="">Both voices</button><button data-v="only-b">Blessings</button><button data-v="only-c">Consequences</button></div>
@@ -109,7 +114,7 @@ function poem(id){
 function sourceHTML(P){
   if(!P.source) return "";
   return `<aside class="srcnote" id="src"><p><span class="star">*</span> ${esc(P.source.note)}</p>
-    ${P.source.verses?`<ul>${P.source.verses.map(v=>`<li><b>${esc(v[0])}:</b> Revelation ${esc(v[1])}</li>`).join("")}</ul>`:""}
+    ${P.source.lines?P.source.lines.map(l=>`<p>${esc(l)}</p>`).join(""):""}${P.source.verses?`<ul>${P.source.verses.map(v=>`<li><b>${esc(v[0])}:</b> Revelation ${esc(v[1])}</li>`).join("")}</ul>`:""}
     <p class="back"><a href="javascript:void 0" data-jump="top">Back to the top</a></p></aside>`;
 }
 function wireJumps(){

@@ -474,6 +474,17 @@ body.theme-tan .foot-mark{filter:invert(1) sepia(1) brightness(.45);opacity:.6}
 .preface .spec{text-align:center;font-family:Jost,sans-serif;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--hi);margin-bottom:16px}
 .preface .pn{font-size:18px;line-height:1.6;color:var(--ink2);margin:0 0 12px}
 
+/* seven churches: three-column chiasm */
+.ch3{margin:26px 0;border-top:1px solid rgba(236,235,231,.15)}
+.ch3r{display:grid;grid-template-columns:2.6em 1fr 1.25fr 1.5fr;gap:14px;padding:10px 8px;border-bottom:1px solid rgba(236,235,231,.1);align-items:start}
+.ch3h{font-family:Jost,sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.ch3r .ck{font-family:Jost,sans-serif;color:var(--earth);font-weight:600}
+.ch3r .c2,.ch3r .c3{padding-left:calc(var(--lv,0)*1.1em)}
+.ch3r .c2 small{display:block;color:var(--hi);font-size:.8em;font-style:italic;margin-top:2px}
+.ch3r .c3{color:var(--ink2)}
+.ch3r.ctr{background:rgba(255,169,77,.08);border-left:2px solid var(--hi)}
+@media (max-width:760px){.ch3r{grid-template-columns:2em 1fr;}.ch3r .c1,.ch3r .c2,.ch3r .c3{grid-column:2}.ch3h span:not(:first-child){display:none}}
+
 </style>
 </head>
 <body>
@@ -526,6 +537,7 @@ SITE_DATA.catalog = {
         { title: "Chiasm", items: [
           { id: "chiasm70", title: "The 70-Fold Chiasm", note: "70 mirrored pairs around 12:11", route: "chiasm" },
           { id: "rev-7-13-14", title: "Dedicated to the Lamb", note: "Revelation 7:13–14", route: "poem/rev-7-13-14" },
+          { id: "seven-churches", title: "The Seven Churches", note: "Revelation 2–3 · a triple chiasm", route: "poem/seven-churches" },
           { title: "The Septet of Septets", status: "soon" }
         ]},
         { title: "Parallelism", items: [ { id: "lamb-overcomes-dragon", title: "The Lamb Overcomes the Dragon", note: "JST Revelation 12:6–11 and Revelation 20:1–6", route: "poem/lamb-overcomes-dragon" }, { id: "cast-down-vs-enthroned", title: "Cast Down vs Enthroned", note: "Revelation 20:1–15", route: "poem/cast-down-vs-enthroned" } ] },
@@ -2895,6 +2907,92 @@ window.SITE_DATA=window.SITE_DATA||{};(SITE_DATA.poems=SITE_DATA.poems||{})['o-m
 
 </script>
 <script>
+window.SITE_DATA=window.SITE_DATA||{};(SITE_DATA.poems=SITE_DATA.poems||{})['seven-churches']={
+ "id": "seven-churches",
+ "title": "The Seven Churches",
+ "subtitle": "A Triple Chiasm · Revelation 2–3",
+ "author": "Hyrum W. Hawks",
+ "eyebrow": "Chiasm",
+ "kind": "churches",
+ "cols": [
+  "Irony 1",
+  "Irony 2",
+  "Echoes"
+ ],
+ "rows": [
+  {
+   "k": "A",
+   "lv": 0,
+   "i1": "Lost love",
+   "i2": "Left Christ",
+   "st": "Fall",
+   "e": "Ephesus: love; “I will come unto thee”"
+  },
+  {
+   "k": "B",
+   "lv": 1,
+   "i1": "Rich poverty",
+   "i2": "Faced synagogue, got crown",
+   "st": "Faith tried",
+   "e": "Smyrna: synagogue of Satan; tried; crown"
+  },
+  {
+   "k": "C",
+   "lv": 2,
+   "i1": "Satan’s throne",
+   "i2": "Hidden name",
+   "st": "Covenant name",
+   "e": "Pergamos: white stone; new name"
+  },
+  {
+   "k": "D",
+   "lv": 3,
+   "i1": "True Son",
+   "i2": "True Son",
+   "st": "Accept the Son",
+   "e": "Thyatira: Son of God; “all the churches”"
+  },
+  {
+   "k": "C′",
+   "lv": 2,
+   "i1": "Living dead",
+   "i2": "False name",
+   "st": "Repent",
+   "e": "Sardis: white raiment; names"
+  },
+  {
+   "k": "B′",
+   "lv": 1,
+   "i1": "Unshaken pillar",
+   "i2": "Has crown, gains temple",
+   "st": "Endure",
+   "e": "Philadelphia: synagogue of Satan; tried; crown"
+  },
+  {
+   "k": "A′",
+   "lv": 0,
+   "i1": "Poor riches",
+   "i2": "Christ knocks",
+   "st": "Enthroned with Christ",
+   "e": "Laodicea: love; “I will come in to him”"
+  }
+ ],
+ "source": {
+  "note": "Centered on Thyatira (D). Irony 1 is each city's local irony and is not chiastic. Irony 2, with its gospel stage beneath, and Echoes are chiastic. KJV.",
+  "lines": [
+   "Who found what. Hyrum W. Hawks: the chiasm; the A and B pairs of Irony 2; the gospel-stage reading. Claude (accepted by the author): the Irony 1 labels; the C pair of Irony 2; the B, C and D pairings in Echoes. Jon Paulien: Laodicea, like Ephesus, lacks love (A and A′). Peter Leithart: Christ’s titles in five letters mirror the chapter 1 description in reverse order.",
+   "Gospel stages: B and B′ are faith tried and endured rather than repentance because Smyrna and Philadelphia are the only churches never told to repent. Repentance sits at C′, where Sardis is told to “repent” (3:3).",
+   "A/A′: “I will come unto thee quickly” (2:5) and “I will come in to him” (3:20); “thy first love” (2:4) and “As many as I love” (3:19). Ephesus “hast left thy first love” and is told “from whence thou art fallen” (2:4–5); to Laodicea, “I stand at the door, and knock” and “sit with me in my throne” (3:20–21).",
+   "B/B′: “the synagogue of Satan” (2:9; 3:9); “that ye may be tried” (2:10) and “to try them” (3:10); “a crown of life” (2:10) and “that no man take thy crown” (3:11); “a pillar in the temple of my God” (3:12). Neither church is rebuked.",
+   "C/C′: “a new name written, which no man knoweth” on a white stone (2:17); Sardis has “a name that thou livest, and art dead” (3:1), white raiment and names kept in the book of life (3:4–5).",
+   "D: the only “the Son of God” in Revelation (2:18); “all the churches shall know” (2:23); the longest letter."
+  ]
+ },
+ "source_file": "Claude Doc 'The Seven Churches: Local Meanings and Wordplay (Rev 2–3)', section 'Structure: a double chiasm'; quotes checked against Reference Library KJV Nov 12"
+};
+
+</script>
+<script>
 /* The 70-fold chiasm viewer: folding arcs, band chips, pair-by-pair walk, and the full fold.
    Adapted from the Oct 26-28 deck code (drawArcs, BandStop, FullFold). */
 window.Chiasm = (function(){
@@ -3127,6 +3225,11 @@ function poem(id){
       <div class="par"><div class="ph"><span>${esc(P.left[0])}</span><span>${esc(P.right[0])}</span></div>${rows}</div>
       ${P.afterword?`<p class="afterword">${esc(P.afterword)}</p>`:""}${sourceHTML(P)}</article>`;
     app.querySelectorAll(".pr").forEach(r => r.onclick = () => app.querySelectorAll(".pr").forEach(x => x.classList.toggle("on", x===r && !r.classList.contains("on"))));
+  } else if(P.kind==="churches"){
+    app.innerHTML = `<article class="poem wide">${head}
+      <div class="ch3"><div class="ch3r ch3h"><span></span>${P.cols.map(c=>`<span>${esc(c)}</span>`).join("")}</div>
+      ${P.rows.map(r=>`<div class="ch3r${r.lv===3?" ctr":""}" style="--lv:${r.lv}"><span class="ck">${esc(r.k)}</span><span class="c1">${esc(r.i1)}</span><span class="c2">${esc(r.i2)}<small>${esc(r.st)}</small></span><span class="c3">${esc(r.e)}</span></div>`).join("")}</div>
+      ${P.afterword?`<p class="afterword">${esc(P.afterword)}</p>`:""}${sourceHTML(P)}</article>`;
   } else if(P.kind==="two-voice"){
     app.innerHTML = `<article class="poem" id="tv">${head}
       <div class="voices"><button class="on" data-v="">Both voices</button><button data-v="only-b">Blessings</button><button data-v="only-c">Consequences</button></div>
@@ -3145,7 +3248,7 @@ function poem(id){
 function sourceHTML(P){
   if(!P.source) return "";
   return `<aside class="srcnote" id="src"><p><span class="star">*</span> ${esc(P.source.note)}</p>
-    ${P.source.verses?`<ul>${P.source.verses.map(v=>`<li><b>${esc(v[0])}:</b> Revelation ${esc(v[1])}</li>`).join("")}</ul>`:""}
+    ${P.source.lines?P.source.lines.map(l=>`<p>${esc(l)}</p>`).join(""):""}${P.source.verses?`<ul>${P.source.verses.map(v=>`<li><b>${esc(v[0])}:</b> Revelation ${esc(v[1])}</li>`).join("")}</ul>`:""}
     <p class="back"><a href="javascript:void 0" data-jump="top">Back to the top</a></p></aside>`;
 }
 function wireJumps(){
