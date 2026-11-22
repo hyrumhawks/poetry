@@ -274,3 +274,7 @@ body.theme-tan .foot-mark{filter:invert(1) sepia(1) brightness(.45);opacity:.6}
 .ch3r .c3{color:var(--ink2)}
 .ch3r.ctr{background:rgba(255,169,77,.08);border-left:2px solid var(--hi)}
 @media (max-width:760px){.ch3r{grid-template-columns:2em 1fr;}.ch3r .c1,.ch3r .c2,.ch3r .c3{grid-column:2}.ch3h span:not(:first-child){display:none}}
+
+/* a quiet door in the center of the title's A */
+.cap-a{position:relative;display:inline-block}
+.cap-a-link{position:absolute;left:32%;top:42%;width:36%;height:28%;cursor:default}

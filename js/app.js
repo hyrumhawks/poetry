@@ -28,7 +28,7 @@ function home(){
   document.title = "Apocalyptic Poetry · Hyrum W. Hawks";
   app.innerHTML = `
   <section class="hero"><div class="spiral-wrap" title="The border is Revelation 12 in Greek, in Joseph Smith Translation order, spiraling in from 12:11.">${D.spiralSVG}</div>
-    <div class="hero-in"><h1>Apocalyptic Poetry</h1>
+    <div class="hero-in"><h1><span class="cap-a">A<a class="cap-a-link" href="https://hyrumhawks.github.io/compiled-bible/" tabindex="-1" aria-label="Compiled Bible"></a></span>pocalyptic Poetry</h1>
       <a class="by" href="${C.authorLink}" target="_blank" rel="noopener">Hyrum W. Hawks</a>
       <a class="logo" href="${C.authorLink}" target="_blank" rel="noopener"><img src="assets/img/emblem.png" alt="Hyrum W. Hawks"></a></div>
     <nav class="doors">${C.sections.map((s,i) => `<a class="door d${i+1}" href="#/section/${s.id}"><span class="dt">${esc(s.title)}</span>${s.byline?`<span class="db">${esc(s.byline)}</span>`:""}</a>`).join("")}</nav>
